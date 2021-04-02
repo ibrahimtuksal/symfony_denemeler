@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HizmetController!{% endblock %}
+
+{% block body %}
+    {% include 'admin/inc/header.html.twig' %}
+    <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                {% for flashMessage in app.session.flashbag.get('hizmet_delete') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+            {{ form(updateform) | raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

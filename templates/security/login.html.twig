@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    <h1 class="h3 mb-3 text-center font-weight-normal">Yönetim Paneli</h1>
+                    <label for="inputUsername">Kullanıcı Adı</label>
+                    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+                    <label for="inputPassword">Şifre</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    <div class="d-grid my-3 gap-2">
+                        <button class="btn btn-success" type="submit">
+                            Giriş Yap <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

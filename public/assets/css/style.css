@@ -1,0 +1,17 @@
+.menu{
+    font-size: 22px;
+}
+.getSetting{
+    text-decoration: none;
+    border:0px;
+    background: none;
+}
+.input-group-text{
+    background: none;
+    border:none;
+    color:white;
+}
+.p-b-zero{
+    margin:0px;
+    padding:0px;
+}

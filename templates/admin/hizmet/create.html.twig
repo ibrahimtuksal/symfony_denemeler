@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Yönetim Paneli{% endblock %}
+
+{% block body %}
+    {% include 'admin/inc/header.html.twig' %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                {% for flashMessage in app.session.flashbag.get('hizmet_add') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <p class="text-center display-6">
+                    Hizmet Ekle
+                </p>
+                {{ form(hizmetform) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

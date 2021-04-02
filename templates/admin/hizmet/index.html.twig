@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Yönetim Paneli{% endblock %}
+
+{% block body %}
+{% include 'admin/inc/header.html.twig' %}
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-5">
+            {% for flashMessage in app.session.flashbag.get('hizmet_delete') %}
+
+                <div class="alert alert-success">
+                    <p class="text-center h5">
+                        {{ flashMessage | raw }}
+                    </p>
+                </div>
+
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('hizmet_updated') %}
+
+                <div class="alert alert-success">
+                    <p class="text-center h5">
+                        {{ flashMessage | raw }}
+                    </p>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-2 offset-md-10 d-grid gap-2">
+            <a href="{{ path('hizmet_create') }}" class="btn btn-warning">Ekle <i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-12">
+            <table class="table table-responsive table-hover text-center">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">İsim</th>
+                    <th scope="col">Seo İsim</th>
+                    <th scope="col">Anahtar Kelimeler</th>
+                    <th scope="col">Sayfa Açıklama</th>
+                    <th scope="col">Düzenle</th>
+                    <th scope="col">Sil</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for hizmet in hizmetler %}
+                    <tr>
+                        <th scope="row">#</th>
+                        <td>{{ hizmet.isim }}</td>
+                        <td>{{ hizmet.slug }}</td>
+                        <td>{{ hizmet.keyword | slice(0,15) }}</td>
+                        <td>{{ hizmet.description | slice(0,15) }}</td>
+                        <td><a href="{{ path('hizmet_update',{id:hizmet.id}) }}" class="btn btn-sm btn-primary">Düzenle <i class="fas fa-pencil-alt"></i></a></td>
+                        <td><a href="{{ path('hizmet_delete',{id:hizmet.id}) }}" class="btn btn-sm btn-danger">Sil <i class="fas fa-trash"></i></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

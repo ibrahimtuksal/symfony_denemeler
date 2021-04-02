@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Yönetim Paneli{% endblock %}
+
+{% block body %}
+    {% include 'admin/inc/header.html.twig' %}
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-md-2 offset-md-10 d-grid gap-2">
+                <a href="{{ path('bolgeler_create') }}" class="btn btn-warning">Ekle <i class="fas fa-plus"></i></a>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+                <table class="table table-responsive table-hover text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">İsim</th>
+                        <th scope="col">Düzenle</th>
+                        <th scope="col">Sil</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for bolge in bolgeler %}
+                        <tr>
+                            <th scope="row">#</th>
+                            <td>{{ bolge.isim }}</td>
+                            <td><a href="" class="btn btn-sm disabled btn-primary">Düzenle <i class="fas fa-pencil-alt"></i></a></td>
+                            <td><a href="" class="btn btn-sm disabled btn-danger">Sil <i class="fas fa-trash"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
