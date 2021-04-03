@@ -16,7 +16,20 @@ class ContentController extends AbstractController
     /**
      * @Route("/admin/content", name="content_home")
      */
-    public function index(Request $request): Response
+    public function index(): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $contents = $em->getRepository(Content::class)->findAll();
+
+        return $this->render('admin/content/index.html.twig',[
+            'contents' => $contents
+        ]);
+    }
+
+    /**
+     * @Route("/admin/content/create", name="content_create")
+     */
+    public function create(Request $request): Response
     {
         $content = new Content();
         $em = $this->getDoctrine()->getManager();
@@ -36,11 +49,13 @@ class ContentController extends AbstractController
 
             $this->addFlash('content_create',"İçerik Başarıyla Eklendi");
 
-            return $this->redirectToRoute('content_list');
+            return $this->redirectToRoute('content_home');
         }
 
-        return $this->render('admin/content/index.html.twig', [
+        return $this->render('admin/content/create.html.twig', [
             'contentform'=>$form->createView()
         ]);
     }
+
+
 }

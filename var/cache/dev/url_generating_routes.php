@@ -19,6 +19,7 @@ return [
     'bolgeler_home' => [[], ['_controller' => 'App\\Controller\\Admin\\BolgelerController::index'], [], [['text', '/admin/bolgeler']], [], []],
     'bolgeler_create' => [[], ['_controller' => 'App\\Controller\\Admin\\BolgelerController::create'], [], [['text', '/admin/bolgeler/create']], [], []],
     'content_home' => [[], ['_controller' => 'App\\Controller\\Admin\\ContentController::index'], [], [['text', '/admin/content']], [], []],
+    'content_create' => [[], ['_controller' => 'App\\Controller\\Admin\\ContentController::create'], [], [['text', '/admin/content/create']], [], []],
     'hizmet_home' => [[], ['_controller' => 'App\\Controller\\Admin\\HizmetController::index'], [], [['text', '/admin/hizmet']], [], []],
     'hizmet_create' => [[], ['_controller' => 'App\\Controller\\Admin\\HizmetController::hizmetAdd'], [], [['text', '/admin/hizmet/create']], [], []],
     'hizmet_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\HizmetController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/hizmet/update']], [], []],
