@@ -29,9 +29,15 @@ class Bolgeler
      */
     private $mahalles;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Content::class, mappedBy="bolge")
+     */
+    private $contents;
+
     public function __construct()
     {
         $this->mahalles = new ArrayCollection();
+        $this->contents = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -63,7 +69,7 @@ class Bolgeler
     {
         if (!$this->mahalles->contains($mahalle)) {
             $this->mahalles[] = $mahalle;
-            $mahalle->setSemtId($this);
+            $mahalle->setSemt($this);
         }
 
         return $this;
@@ -73,8 +79,38 @@ class Bolgeler
     {
         if ($this->mahalles->removeElement($mahalle)) {
             // set the owning side to null (unless already changed)
-            if ($mahalle->getSemtId() === $this) {
-                $mahalle->setSemtId(null);
+            if ($mahalle->getSemt() === $this) {
+                $mahalle->setSemt(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Content[]
+     */
+    public function getContents(): Collection
+    {
+        return $this->contents;
+    }
+
+    public function addContent(Content $content): self
+    {
+        if (!$this->contents->contains($content)) {
+            $this->contents[] = $content;
+            $content->setBolge($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContent(Content $content): self
+    {
+        if ($this->contents->removeElement($content)) {
+            // set the owning side to null (unless already changed)
+            if ($content->getBolge() === $this) {
+                $content->setBolge(null);
             }
         }
 

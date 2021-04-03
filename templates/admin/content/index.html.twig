@@ -3,9 +3,10 @@
 {% block title %}Hello ContentController!{% endblock %}
 
 {% block body %}
-<div class="container">
+    {% include 'admin/inc/header.html.twig' %}
+<div class="container mb-5">
     <div class="row justify-content-md-center">
-        <div class="col-md-5">
+        <div class="col-md-10">
             {{ form(contentform) }}
         </div>
     </div>

@@ -18,9 +18,14 @@ class Content
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=Bolgeler::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Bolgeler::class, inversedBy="contents")
      */
     private $bolge;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Hizmetler::class, inversedBy="contents")
+     */
+    private $hizmet;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -48,11 +53,6 @@ class Content
     private $description;
 
     /**
-     * @ORM\OneToOne(targetEntity=Hizmetler::class, cascade={"persist", "remove"})
-     */
-    private $hizmet;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $created_at;
@@ -62,6 +62,7 @@ class Content
         return $this->id;
     }
 
+
     public function getBolge(): ?Bolgeler
     {
         return $this->bolge;
@@ -70,6 +71,18 @@ class Content
     public function setBolge(?Bolgeler $bolge): self
     {
         $this->bolge = $bolge;
+
+        return $this;
+    }
+
+    public function getHizmet(): ?Hizmetler
+    {
+        return $this->hizmet;
+    }
+
+    public function setHizmet(?Hizmetler $hizmet): self
+    {
+        $this->hizmet = $hizmet;
 
         return $this;
     }
@@ -130,18 +143,6 @@ class Content
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getHizmet(): ?Hizmetler
-    {
-        return $this->hizmet;
-    }
-
-    public function setHizmet(?Hizmetler $hizmet): self
-    {
-        $this->hizmet = $hizmet;
 
         return $this;
     }

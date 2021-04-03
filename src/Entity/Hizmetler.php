@@ -3,7 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\HizmetlerRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity(repositoryClass=HizmetlerRepository::class)
@@ -36,6 +39,16 @@ class Hizmetler
      * @ORM\Column(type="string", length=350)
      */
     private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Content::class, mappedBy="hizmet")
+     */
+    private $contents;
+
+    public function __construct()
+    {
+        $this->contents = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +99,35 @@ class Hizmetler
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+    /**
+     * @return Collection|Content[]
+     */
+    public function getContents(): Collection
+    {
+        return $this->contents;
+    }
+
+    public function addContent(Content $content): self
+    {
+        if (!$this->contents->contains($content)) {
+            $this->contents[] = $content;
+            $content->setHizmet($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContent(Content $content): self
+    {
+        if ($this->contents->removeElement($content)) {
+            // set the owning side to null (unless already changed)
+            if ($content->getHizmet() === $this) {
+                $content->setHizmet(null);
+            }
+        }
 
         return $this;
     }
