@@ -5,6 +5,28 @@
 {% block body %}
     {% include 'admin/inc/header.html.twig' %}
     <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                {% for flashMessage in app.session.flashbag.get('content_delete') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('content_updated') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
         <div class="row mt-5">
             <div class="col-md-2 offset-md-10 d-grid gap-2">
                 <a href="{{ path('content_create') }}" class="btn btn-warning">Ekle <i class="fas fa-plus"></i></a>
@@ -17,7 +39,7 @@
                     <tr>
                         <th>#</th>
                         <th scope="col">İsim</th>
-                        <th scope="col">Bolges</th>
+                        <th scope="col">Bolge</th>
                         <th scope="col">Hizmet</th>
                         <th scope="col">Düzenle</th>
                         <th scope="col">Sil</th>
@@ -30,8 +52,8 @@
                             <td>{{ content.isim }}</td>
                             <td>{{ content.bolge.isim }}</td>
                             <td>{{ content.hizmet.isim }}</td>
-                            <td><a href="" class="btn btn-sm btn-primary">Düzenle <i class="fas fa-pencil-alt"></i></a></td>
-                            <td><a href="" class="btn btn-sm btn-danger">Sil <i class="fas fa-trash"></i></a></td>
+                            <td><a href="{{ path('content_update', {id:content.id}) }}" class="btn btn-sm btn-primary">Düzenle <i class="fas fa-pencil-alt"></i></a></td>
+                            <td><a href="{{ path('content_delete', {id:content.id}) }}" class="btn btn-sm btn-danger">Sil <i class="fas fa-trash"></i></a></td>
                         </tr>
                     {% endfor %}
                     </tbody>

@@ -393,6 +393,10 @@
     <service id="App\Form\BolgelerFormType" class="App\Form\BolgelerFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\ContentChangeFormType" class="App\Form\ContentChangeFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="App\Form\ContentFormType" class="App\Form\ContentFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -901,6 +905,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\BolgelerFormType</argument>
+        <argument>App\Form\ContentChangeFormType</argument>
         <argument>App\Form\ContentFormType</argument>
         <argument>App\Form\HizmetlerChangeFormType</argument>
         <argument>App\Form\HizmetlerFormType</argument>
@@ -1262,7 +1267,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.LiA7dIg"/>
+      <argument type="service" id=".service_locator.SVGkjLP"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5376,6 +5381,8 @@
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BolgelerFormType" class="App\Form\BolgelerFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BolgelerFormType" class="App\Form\BolgelerFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContentChangeFormType" class="App\Form\ContentChangeFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ContentChangeFormType" class="App\Form\ContentChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContentFormType" class="App\Form\ContentFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContentFormType" class="App\Form\ContentFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HizmetlerChangeFormType" class="App\Form\HizmetlerChangeFormType" autowire="true" abstract="true"/>
@@ -5787,10 +5794,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.LiA7dIg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.SVGkjLP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\BolgelerFormType" type="service" id="App\Form\BolgelerFormType"/>
+        <argument key="App\Form\ContentChangeFormType" type="service" id="App\Form\ContentChangeFormType"/>
         <argument key="App\Form\ContentFormType" type="service" id="App\Form\ContentFormType"/>
         <argument key="App\Form\HizmetlerChangeFormType" type="service" id="App\Form\HizmetlerChangeFormType"/>
         <argument key="App\Form\HizmetlerFormType" type="service" id="App\Form\HizmetlerFormType"/>

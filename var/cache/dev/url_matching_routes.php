@@ -42,9 +42,15 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/admin/hizmet/(?'
-                    .'|update/([^/]++)(*:201)'
-                    .'|delete/([^/]++)(*:224)'
+                .'|/admin/(?'
+                    .'|content/(?'
+                        .'|update/([^/]++)(*:205)'
+                        .'|delete/([^/]++)(*:228)'
+                    .')'
+                    .'|hizmet/(?'
+                        .'|update/([^/]++)(*:262)'
+                        .'|delete/([^/]++)(*:285)'
+                    .')'
                 .')'
             .')/?$}sDu',
     ],
@@ -56,8 +62,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        201 => [[['_route' => 'hizmet_update', '_controller' => 'App\\Controller\\Admin\\HizmetController::update'], ['id'], null, null, false, true, null]],
-        224 => [
+        205 => [[['_route' => 'content_update', '_controller' => 'App\\Controller\\Admin\\ContentController::update'], ['id'], null, null, false, true, null]],
+        228 => [[['_route' => 'content_delete', '_controller' => 'App\\Controller\\Admin\\ContentController::delete'], ['id'], null, null, false, true, null]],
+        262 => [[['_route' => 'hizmet_update', '_controller' => 'App\\Controller\\Admin\\HizmetController::update'], ['id'], null, null, false, true, null]],
+        285 => [
             [['_route' => 'hizmet_delete', '_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

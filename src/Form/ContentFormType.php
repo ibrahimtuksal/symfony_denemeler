@@ -29,7 +29,7 @@ class ContentFormType extends AbstractType
     {
         $builder
             ->add('isim', TextType::class, ['attr'=>['class'=>'form-control']])
-            ->add('slug', TextType::class, ['attr'=>['class'=>'form-control']])
+            //->add('slug', TextType::class, ['attr'=>['class'=>'form-control']])
             ->add('icerik', CKEditorType::class, [
                 'config' => [
                     'uiColor' => '#e2e2e2',
@@ -37,8 +37,8 @@ class ContentFormType extends AbstractType
                     'required' => true
                 ]
             ])
-            ->add('keyword', TextType::class, ['attr'=>['class'=>'form-control']])
-            ->add('description', TextType::class, ['attr'=>['class'=>'form-control']])
+            ->add('keyword', TextType::class, ['attr'=>['class'=>'form-control is-valid']])
+            ->add('description', TextType::class, ['attr'=>['class'=>'form-control is-valid']])
 //            ->add('created_at', DateTimeType::class, [
 //                'placeholder' => [
 //                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day',

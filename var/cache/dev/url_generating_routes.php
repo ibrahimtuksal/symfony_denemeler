@@ -20,6 +20,8 @@ return [
     'bolgeler_create' => [[], ['_controller' => 'App\\Controller\\Admin\\BolgelerController::create'], [], [['text', '/admin/bolgeler/create']], [], []],
     'content_home' => [[], ['_controller' => 'App\\Controller\\Admin\\ContentController::index'], [], [['text', '/admin/content']], [], []],
     'content_create' => [[], ['_controller' => 'App\\Controller\\Admin\\ContentController::create'], [], [['text', '/admin/content/create']], [], []],
+    'content_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ContentController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/content/update']], [], []],
+    'content_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ContentController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/content/delete']], [], []],
     'hizmet_home' => [[], ['_controller' => 'App\\Controller\\Admin\\HizmetController::index'], [], [['text', '/admin/hizmet']], [], []],
     'hizmet_create' => [[], ['_controller' => 'App\\Controller\\Admin\\HizmetController::hizmetAdd'], [], [['text', '/admin/hizmet/create']], [], []],
     'hizmet_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\HizmetController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/hizmet/update']], [], []],
