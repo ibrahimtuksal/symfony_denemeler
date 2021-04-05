@@ -43,7 +43,10 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
         echo "<div class=\"container pt-5\">
     <div class=\"row justify-content-md-center\">
         <div class=\"col-md-8 text-center\">
-            <p class=\"display-4\"><a href=\"index.php\" class=\"text-dark\" style=\"text-decoration: none;\">Yönetim Paneli</a></p>
+            <p class=\"display-4\"><a href=\"";
+        // line 4
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\" class=\"text-dark\" style=\"text-decoration: none;\">Yönetim Paneli</a></p>
             <p class=\"h4\">";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5), "fullname", [], "any", false, false, false, 5), "html", null, true);
@@ -108,7 +111,7 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
 
     public function getDebugInfo()
     {
-        return array (  86 => 27,  80 => 24,  74 => 21,  68 => 18,  53 => 6,  49 => 5,  43 => 1,);
+        return array (  89 => 27,  83 => 24,  77 => 21,  71 => 18,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -116,7 +119,7 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
         return new Source("<div class=\"container pt-5\">
     <div class=\"row justify-content-md-center\">
         <div class=\"col-md-8 text-center\">
-            <p class=\"display-4\"><a href=\"index.php\" class=\"text-dark\" style=\"text-decoration: none;\">Yönetim Paneli</a></p>
+            <p class=\"display-4\"><a href=\"{{ path('admin') }}\" class=\"text-dark\" style=\"text-decoration: none;\">Yönetim Paneli</a></p>
             <p class=\"h4\">{{ app.user.fullname }}</p>
             <a href=\"{{ path('app_logout') }}\" class=\"btn btn-danger\"><i class=\"fas fa-power-off\"></i></a>
             <hr>

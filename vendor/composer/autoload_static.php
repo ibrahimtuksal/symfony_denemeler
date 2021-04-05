@@ -603,6 +603,7 @@ class ComposerStaticInit25fc07dacf73a18ce0d4ed63c467f72c
         'App\\Entity\\Mahalle' => __DIR__ . '/../..' . '/src/Entity/Mahalle.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Form\\BolgelerFormType' => __DIR__ . '/../..' . '/src/Form/BolgelerFormType.php',
+        'App\\Form\\ContentChangeFormType' => __DIR__ . '/../..' . '/src/Form/ContentChangeFormType.php',
         'App\\Form\\ContentFormType' => __DIR__ . '/../..' . '/src/Form/ContentFormType.php',
         'App\\Form\\HizmetlerChangeFormType' => __DIR__ . '/../..' . '/src/Form/HizmetlerChangeFormType.php',
         'App\\Form\\HizmetlerFormType' => __DIR__ . '/../..' . '/src/Form/HizmetlerFormType.php',

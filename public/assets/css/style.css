@@ -1,5 +1,86 @@
+.purple
+{
+    color: #AD33FF;
+}
+.mt-10
+{
+    margin-top: 6rem !important;
+}
 .menu{
     font-size: 22px;
+    margin-right: 25px;
+    border-bottom: 2px solid #AD33FF;
+}
+.brand-title
+{
+    border-bottom: 2px solid #AD33FF;
+    font-size: 25px;
+}
+.btn-purple
+{
+    color: #fff;
+    background-color: #AD33FF;
+    border-color: #AD33FF;
+}
+.features-i
+{
+    font-size: 25px;
+    color:#AD33FF;
+}
+.features-t
+{
+    font-size: 22px;
+}
+.features-c
+{
+    font-size: 15px;
+    color:gray;
+}
+.services
+{
+    border-bottom:1px solid #AD33FF;
+    border-radius: 100%;
+    font-size: 22px;
+    -webkit-box-shadow: 0px 10px 16px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 16px -15px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 16px -15px rgba(0,0,0,0.75);
+}
+.services-link
+{
+    color: #7a00cc;
+    text-decoration: none;
+}
+.border-bottom
+{
+    border-bottom: 1px solid gray;
+    border-radius: 50%;
+    padding-bottom: 15px;
+}
+.content-i
+{
+    object-fit: cover;
+    width: 500px;
+    height: 250px;
+    border-radius: 2%;
+    -webkit-box-shadow: 0px 10px 16px -15px rgba(173,51,255,1);
+    -moz-box-shadow: 0px 10px 16px -15px rgba(173,51,255,1);
+    box-shadow: 0px 10px 16px -15px rgba(173,51,255,1);
+}
+.content-t
+{
+    color:#7a00cc;
+    font-size: 25px;
+}
+.content-c
+{
+    font-size: 18px;
+    color:gray;
+}
+.footer-u
+{
+    background-color: #7a00cc;
+    color:white;
+
 }
 .getSetting{
     text-decoration: none;

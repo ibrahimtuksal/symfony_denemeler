@@ -20,6 +20,7 @@ return array(
     'App\\Entity\\Mahalle' => $baseDir . '/src/Entity/Mahalle.php',
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
     'App\\Form\\BolgelerFormType' => $baseDir . '/src/Form/BolgelerFormType.php',
+    'App\\Form\\ContentChangeFormType' => $baseDir . '/src/Form/ContentChangeFormType.php',
     'App\\Form\\ContentFormType' => $baseDir . '/src/Form/ContentFormType.php',
     'App\\Form\\HizmetlerChangeFormType' => $baseDir . '/src/Form/HizmetlerChangeFormType.php',
     'App\\Form\\HizmetlerFormType' => $baseDir . '/src/Form/HizmetlerFormType.php',
