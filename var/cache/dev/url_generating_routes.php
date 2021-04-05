@@ -28,6 +28,7 @@ return [
     'hizmet_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/hizmet/delete']], [], []],
     'mahalle_home' => [[], ['_controller' => 'App\\Controller\\Admin\\MahalleController::index'], [], [['text', '/admin/mahalle']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
+    'hizmet' => [['slug'], ['_controller' => 'App\\Controller\\HomeController::hizmet'], [], [['variable', '/', '[^/]++', 'slug', true]], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

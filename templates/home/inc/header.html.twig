@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="col-md-2 px-lg-3 mx-auto mb-3">
+            <a class="navbar-brand brand-title" href="#"><i class="fas fa-tint"></i> Su Tesisatçısı</a>
+            <button class="navbar-toggler text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="col-md-7">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="#">&nbsp;<i class="fas fa-home"></i>&nbsp;</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hizmetlerimiz
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for hizmet in hizmetler %}
+                                <li><a class="dropdown-item" href="#">{{ hizmet.isim }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="#">S.S.S <i class="fas fa-question"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="#">Bölgelerimiz <i class="fas fa-city"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu" href="#">İletişim <i class="far fa-id-card"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 mx-3 align-self-center align-items-center mx-auto">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Hizmet Ara" aria-label="Search">
+                <button class="btn btn-purple" type="submit">Ara</button>
+            </form>
+        </div>
+    </div>
+</nav>

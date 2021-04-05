@@ -85,51 +85,10 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "
-    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-        <div class=\"container-fluid\">
-            <div class=\"col-md-2 px-lg-3 mx-auto mb-3\">
-                <a class=\"navbar-brand brand-title\" href=\"#\"><i class=\"fas fa-tint\"></i> Su Tesisatçısı</a>
-                <button class=\"navbar-toggler text-center\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                    <span class=\"navbar-toggler-icon\"></span>
-                </button>
-            </div>
-            <div class=\"col-md-7\">
-                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                    <ul class=\"navbar-nav mx-auto\">
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">&nbsp;<i class=\"fas fa-home\"></i>&nbsp;</a>
-                        </li>
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle menu\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                                Hizmetlerimiz
-                            </a>
-                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-                            </ul>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">S.S.S <i class=\"fas fa-question\"></i></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">Bölgelerimiz <i class=\"fas fa-city\"></i></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">İletişim <i class=\"far fa-id-card\"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class=\"col-md-2 mx-3 align-self-center align-items-center mx-auto\">
-                <form class=\"d-flex\">
-                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Hizmet Ara\" aria-label=\"Search\">
-                    <button class=\"btn btn-purple\" type=\"submit\">Ara</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-<div class=\"container-fluid\">
+        echo "    ";
+        $this->loadTemplate("home/inc/header.html.twig", "home/index.html.twig", 6)->display($context);
+        // line 7
+        echo "<div class=\"container-fluid\">
     <div class=\"row justify-content-md-center\">
         <div class=\"col-md-12 p-b-zero\">
             <div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-bs-ride=\"carousel\">
@@ -206,27 +165,30 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
             </div>
         </div>
         <div class=\"row justify-content-md-center my-5\">
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-        </div>
+            ";
+        // line 84
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["hizmetler"]) || array_key_exists("hizmetler", $context) ? $context["hizmetler"] : (function () { throw new RuntimeError('Variable "hizmetler" does not exist.', 84, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["hizmet"]) {
+            // line 85
+            echo "                <div class=\"col-md-3 my-5 text-center services pb-4\">
+                    <p><i class=\"fas fa-tint purple\"></i> ";
+            // line 86
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hizmet"], "isim", [], "any", false, false, false, 86), "html", null, true);
+            echo "</p>
+                    <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
+                    <a href=\"";
+            // line 88
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hizmet", ["slug" => twig_get_attribute($this->env, $this->source, $context["hizmet"], "slug", [], "any", false, false, false, 88)]), "html", null, true);
+            echo "\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hizmet'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 91
+        echo "        </div>
     </div>
 
     <div class=\"container mt-10\">
@@ -278,16 +240,11 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
         </div>
     </div>
 
-    <footer class=\"mt-10\">
-        <div class=\"container-fluid\">
-            <div class=\"row\">
-                <div class=\"col-md-12 footer-u\">
-                    <p class=\"text-center p-b-zero py-3\">Su Tesisatçısı Tüm Hakları Saklıdır &copy;</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+";
+        // line 143
+        $this->loadTemplate("home/inc/footer.html.twig", "home/index.html.twig", 143)->display($context);
+        // line 144
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -309,7 +266,7 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  247 => 144,  245 => 143,  191 => 91,  182 => 88,  177 => 86,  174 => 85,  170 => 84,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -319,50 +276,7 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-
-    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-        <div class=\"container-fluid\">
-            <div class=\"col-md-2 px-lg-3 mx-auto mb-3\">
-                <a class=\"navbar-brand brand-title\" href=\"#\"><i class=\"fas fa-tint\"></i> Su Tesisatçısı</a>
-                <button class=\"navbar-toggler text-center\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                    <span class=\"navbar-toggler-icon\"></span>
-                </button>
-            </div>
-            <div class=\"col-md-7\">
-                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                    <ul class=\"navbar-nav mx-auto\">
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">&nbsp;<i class=\"fas fa-home\"></i>&nbsp;</a>
-                        </li>
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle menu\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                                Hizmetlerimiz
-                            </a>
-                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-                            </ul>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">S.S.S <i class=\"fas fa-question\"></i></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">Bölgelerimiz <i class=\"fas fa-city\"></i></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link menu\" href=\"#\">İletişim <i class=\"far fa-id-card\"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class=\"col-md-2 mx-3 align-self-center align-items-center mx-auto\">
-                <form class=\"d-flex\">
-                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Hizmet Ara\" aria-label=\"Search\">
-                    <button class=\"btn btn-purple\" type=\"submit\">Ara</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
+    {% include 'home/inc/header.html.twig' %}
 <div class=\"container-fluid\">
     <div class=\"row justify-content-md-center\">
         <div class=\"col-md-12 p-b-zero\">
@@ -440,26 +354,13 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
             </div>
         </div>
         <div class=\"row justify-content-md-center my-5\">
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
-            <div class=\"col-md-3 my-5 text-center services pb-4\">
-                <p><i class=\"fas fa-tint purple\"></i> Su Kaçağı</p>
-                <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
-                <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
-            </div>
+            {% for hizmet in hizmetler %}
+                <div class=\"col-md-3 my-5 text-center services pb-4\">
+                    <p><i class=\"fas fa-tint purple\"></i> {{ hizmet.isim }}</p>
+                    <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
+                    <a href=\"{{ path('hizmet', {slug:hizmet.slug}) }}\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -512,15 +413,7 @@ class __TwigTemplate_b77d251ae356de5b842021973412273867606614e67e50f1ebcdac8fbc2
         </div>
     </div>
 
-    <footer class=\"mt-10\">
-        <div class=\"container-fluid\">
-            <div class=\"row\">
-                <div class=\"col-md-12 footer-u\">
-                    <p class=\"text-center p-b-zero py-3\">Su Tesisatçısı Tüm Hakları Saklıdır &copy;</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+{% include 'home/inc/footer.html.twig' %}
 
 {% endblock %}
 ", "home/index.html.twig", "C:\\xampp\\htdocs\\symfony_denemeler\\templates\\home\\index.html.twig");

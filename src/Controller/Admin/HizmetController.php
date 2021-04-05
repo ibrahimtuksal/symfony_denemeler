@@ -74,11 +74,14 @@ class HizmetController extends AbstractController
      */
     public function delete($id)
     {
-        $hizmet_id=$this->getDoctrine()->getRepository(Hizmetler::class)->find($id);
         $em=$this->getDoctrine()->getManager();
+
+        $hizmet_id=$em->getRepository(Hizmetler::class)->find($id);
         $em->remove($hizmet_id);
         $em->flush();
+
         $this->addFlash('hizmet_delete',"Hizmet Başarıyla Silindi <i class='fas fa-trash'></i>");
+
         return $this->redirectToRoute('hizmet_home');
     }
 }
