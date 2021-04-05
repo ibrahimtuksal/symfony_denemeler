@@ -24,7 +24,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="hizmet")
+     * @Route("/blog/{slug}", name="hizmet")
      */
     public function hizmet($slug)
     {

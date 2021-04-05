@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,6 +30,11 @@ class ContentFormType extends AbstractType
     {
         $builder
             ->add('isim', TextType::class, ['attr'=>['class'=>'form-control']])
+            ->add('photo', FileType::class, [
+                'label' => 'Kapak Fotoğrafı',
+                'attr' => ['class' => 'form-control'],
+                'empty_data' => 'naberlan'
+            ])
             //->add('slug', TextType::class, ['attr'=>['class'=>'form-control']])
             ->add('icerik', CKEditorType::class, [
                 'config' => [

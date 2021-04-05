@@ -22,6 +22,8 @@ return [
         '/admin/hizmet/create' => [[['_route' => 'hizmet_create', '_controller' => 'App\\Controller\\Admin\\HizmetController::hizmetAdd'], null, null, null, false, false, null]],
         '/admin/mahalle' => [[['_route' => 'mahalle_home', '_controller' => 'App\\Controller\\Admin\\MahalleController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -50,11 +52,7 @@ return [
                         .'|delete/([^/]++)(*:285)'
                     .')'
                 .')'
-                .'|/([^/]++)(*:304)'
-                .'|/log(?'
-                    .'|in(*:321)'
-                    .'|out(*:332)'
-                .')'
+                .'|/blog/([^/]++)(*:309)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -69,10 +67,8 @@ return [
         228 => [[['_route' => 'content_delete', '_controller' => 'App\\Controller\\Admin\\ContentController::delete'], ['id'], null, null, false, true, null]],
         262 => [[['_route' => 'hizmet_update', '_controller' => 'App\\Controller\\Admin\\HizmetController::update'], ['id'], null, null, false, true, null]],
         285 => [[['_route' => 'hizmet_delete', '_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], ['id'], null, null, false, true, null]],
-        304 => [[['_route' => 'hizmet', '_controller' => 'App\\Controller\\HomeController::hizmet'], ['slug'], null, null, false, true, null]],
-        321 => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], [], null, null, false, false, null]],
-        332 => [
-            [['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], [], null, null, false, false, null],
+        309 => [
+            [['_route' => 'hizmet', '_controller' => 'App\\Controller\\HomeController::hizmet'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

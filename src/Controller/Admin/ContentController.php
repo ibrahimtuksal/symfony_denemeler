@@ -9,12 +9,22 @@ use App\Form\ContentChangeFormType;
 use App\Form\ContentFormType;
 use Cocur\Slugify\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ContentController extends AbstractController
 {
+    private $fileSystem;
+
+    public function __construct()
+    {
+        $this->fileSystem = new Filesystem();
+    }
+
     /**
      * @Route("/admin/content", name="content_home")
      */
@@ -31,7 +41,7 @@ class ContentController extends AbstractController
     /**
      * @Route("/admin/content/create", name="content_create")
      */
-    public function create(Request $request): Response
+    public function create(Request $request, SluggerInterface $slugger): Response
     {
         $content = new Content();
         $em = $this->getDoctrine()->getManager();
@@ -39,6 +49,24 @@ class ContentController extends AbstractController
         $form = $this->createForm(ContentFormType::class,$content);
         $form->handleRequest($request);
         if ( $form->isSubmitted() && $form->isValid() ) {
+            $brochureFile  = $form->get('photo')->getData();
+            if ($brochureFile) {
+                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFile->guessExtension();
+                try {
+                    $brochureFile->move(
+                        $this->getParameter('brochures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+
+                }
+
+                $content->setPhoto("uploads/brochures/".$newFilename);
+            }
+
             $slugify = new Slugify();
             $slug = $slugify->slugify($content->getIsim());
 
@@ -70,21 +98,44 @@ class ContentController extends AbstractController
     /**
      * @Route("/admin/content/update/{id}", name="content_update")
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, SluggerInterface $slugger)
     {
         $em = $this->getDoctrine()->getManager();
 
         $content = $em->getRepository(Content::class)->find($id);
+
         $form=$this->createForm(ContentChangeFormType::class, $content);
+    // TODO: üstte eski resim yolu tut foto varsa ekle yoksa eski değişkeni ata ve varsa eski fotoyu sil
+
         $form->handleRequest($request);
         if ( $form->isSubmitted() && $form->isValid() ){
             $slugify = new Slugify();
             $slug = $slugify->slugify($content->getIsim());
             $bolgeId=$form->get('bolge')->getData();
             $hizmetId=$form->get('hizmet')->getData();
+            echo $photoPath = $content->getPhoto(); exit;
 
             $bolge=$em->getRepository(Bolgeler::class)->find($bolgeId);
             $hizmet=$em->getRepository(Hizmetler::class)->find($hizmetId);
+
+            $brochureFile  = $form->get('photo')->getData();
+            if ($brochureFile){
+                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFile->guessExtension();
+                try {
+                    $brochureFile->move(
+                        $this->getParameter('brochures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+
+                }
+                $content->setPhoto("uploads/brochures/".$newFilename);
+            }
+            if ($brochureFile == null){
+                $content->setPhoto($content->getPhoto());
+            }
             $content
                 ->setBolge($bolge)
                 ->setHizmet($hizmet)

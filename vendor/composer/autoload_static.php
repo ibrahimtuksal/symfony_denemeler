@@ -648,7 +648,6 @@ class ComposerStaticInit25fc07dacf73a18ce0d4ed63c467f72c
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\CollectionRegionDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/CollectionRegionDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\ConvertMappingDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/ConvertMappingDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\CreateSchemaDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/CreateSchemaDoctrineCommand.php',
-        'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DelegateCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/DelegateCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DoctrineCommandHelper' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/DoctrineCommandHelper.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DropSchemaDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/DropSchemaDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\EnsureProductionSettingsDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/Proxy/EnsureProductionSettingsDoctrineCommand.php',

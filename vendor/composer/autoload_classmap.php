@@ -65,7 +65,6 @@ return array(
     'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\CollectionRegionDoctrineCommand' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/CollectionRegionDoctrineCommand.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\ConvertMappingDoctrineCommand' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/ConvertMappingDoctrineCommand.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\CreateSchemaDoctrineCommand' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/CreateSchemaDoctrineCommand.php',
-    'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DelegateCommand' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/DelegateCommand.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DoctrineCommandHelper' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/DoctrineCommandHelper.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\DropSchemaDoctrineCommand' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/DropSchemaDoctrineCommand.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Command\\Proxy\\EnsureProductionSettingsDoctrineCommand' => $vendorDir . '/doctrine/doctrine-bundle/Command/Proxy/EnsureProductionSettingsDoctrineCommand.php',
