@@ -73,6 +73,8 @@ return [[
 '%5B%5BC%5DApp%5CController%5CAdmin%5CBolgelerController%23create%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CAdmin%5CContentController%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CAdmin%5CContentController%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CAdmin%5CContentController%23__construct%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CAdmin%5CContentController%23__construct%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CAdmin%5CContentController%23index%5D%5B1%5D' => 6,
 '%5B%5BC%5DApp%5CController%5CAdmin%5CContentController%23index%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CAdmin%5CContentController%23create%5D%5B1%5D' => 7,
@@ -81,6 +83,8 @@ return [[
 '%5B%5BC%5DApp%5CController%5CAdmin%5CContentController%23update%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CAdmin%5CContentController%23delete%5D%5B1%5D' => 9,
 '%5B%5BC%5DApp%5CController%5CAdmin%5CContentController%23delete%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CAdmin%5CContentController%24fileSystem%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CAdmin%5CContentController%24fileSystem%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CAdmin%5CHizmetController%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CAdmin%5CHizmetController%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CAdmin%5CHizmetController%23index%5D%5B1%5D' => 10,
@@ -830,7 +834,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1617655195,
+2 => 1617715915,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1340,6 +1344,11 @@ return [[
                 'targetEntity' => [
                     'App\\Entity\\Hizmetler',
                 ],
+                'cascade' => [
+                    [
+                        'remove',
+                    ],
+                ],
                 'inversedBy' => [
                     'contents',
                 ],
@@ -1440,6 +1449,11 @@ return [[
                 ],
                 'targetEntity' => [
                     'App\\Entity\\Content',
+                ],
+                'cascade' => [
+                    [
+                        'remove',
+                    ],
                 ],
             ],
         ],

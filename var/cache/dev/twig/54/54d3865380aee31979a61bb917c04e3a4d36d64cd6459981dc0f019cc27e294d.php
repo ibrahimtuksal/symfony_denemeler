@@ -74,18 +74,24 @@ class __TwigTemplate_6f4fb2133eb9f67da87e404f8343bb4ffae2cb691448871a9c500b87a1d
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
         // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sss_home");
+        echo "\" class=\"btn btn-dark\">S.S.S <i class=\"fas fa-question\"></i></a>
+        </div>
+        <div class=\"col-md-2 d-grid gap-2 mb-3\">
+            <a href=\"";
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bolgeler_home");
         echo "\" class=\"btn btn-dark\">Semt <i class=\"fas fa-city\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 24
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mahalle_home");
         echo "\" class=\"btn btn-dark\">Mahalle <i class=\"fas fa-city\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 27
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_home");
         echo "\" class=\"btn btn-dark\">İçerik <i class=\"fas fa-qrcode\"></i></a>
         </div>
@@ -111,7 +117,7 @@ class __TwigTemplate_6f4fb2133eb9f67da87e404f8343bb4ffae2cb691448871a9c500b87a1d
 
     public function getDebugInfo()
     {
-        return array (  89 => 27,  83 => 24,  77 => 21,  71 => 18,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
+        return array (  95 => 30,  89 => 27,  83 => 24,  77 => 21,  71 => 18,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -134,6 +140,9 @@ class __TwigTemplate_6f4fb2133eb9f67da87e404f8343bb4ffae2cb691448871a9c500b87a1d
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"{{ path('hizmet_home') }}\" class=\"btn btn-dark\">Hizmetler <i class=\"fas fa-bars\"></i></a>
+        </div>
+        <div class=\"col-md-2 d-grid gap-2 mb-3\">
+            <a href=\"{{ path('sss_home') }}\" class=\"btn btn-dark\">S.S.S <i class=\"fas fa-question\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"{{ path('bolgeler_home') }}\" class=\"btn btn-dark\">Semt <i class=\"fas fa-city\"></i></a>
