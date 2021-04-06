@@ -103,7 +103,7 @@ class ContentController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $content = $em->getRepository(Content::class)->find($id);
-
+        $lastPhoto = $content->getPhoto();
         $form=$this->createForm(ContentChangeFormType::class, $content);
     // TODO: üstte eski resim yolu tut foto varsa ekle yoksa eski değişkeni ata ve varsa eski fotoyu sil
 
@@ -113,13 +113,13 @@ class ContentController extends AbstractController
             $slug = $slugify->slugify($content->getIsim());
             $bolgeId=$form->get('bolge')->getData();
             $hizmetId=$form->get('hizmet')->getData();
-            echo $photoPath = $content->getPhoto(); exit;
 
             $bolge=$em->getRepository(Bolgeler::class)->find($bolgeId);
             $hizmet=$em->getRepository(Hizmetler::class)->find($hizmetId);
 
             $brochureFile  = $form->get('photo')->getData();
             if ($brochureFile){
+
                 $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFile->guessExtension();
@@ -128,13 +128,14 @@ class ContentController extends AbstractController
                         $this->getParameter('brochures_directory'),
                         $newFilename
                     );
+                    $filesystem = new Filesystem();
+                    $filesystem->remove($lastPhoto);
+                    $content->setPhoto("uploads/brochures/".$newFilename);
                 } catch (FileException $e) {
 
                 }
-                $content->setPhoto("uploads/brochures/".$newFilename);
-            }
-            if ($brochureFile == null){
-                $content->setPhoto($content->getPhoto());
+            } else {
+                $content->setPhoto($lastPhoto);
             }
             $content
                 ->setBolge($bolge)
