@@ -23,7 +23,7 @@ class Content
     private $bolge;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Hizmetler::class, inversedBy="contents")
+     * @ORM\ManyToOne(targetEntity=Hizmetler::class, inversedBy="contents", cascade={"remove"})
      */
     private $hizmet;
 

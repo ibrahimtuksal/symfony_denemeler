@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="/assets/js/bootstrap.bundle.js"></script>
 
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
@@ -23,6 +24,14 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-        <script src="assets/js/bootstrap.js"></script>
+        <script src="/assets/js/bootstrap.js"></script>
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.js"></script>
         </body>
 </html>

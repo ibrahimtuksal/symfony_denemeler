@@ -189,7 +189,7 @@ class __TwigTemplate_1fcc6b21d4672451eabbaff3769837a684ad339d57ad4662ad0a02025b2
                         <td><a href=\"";
             // line 58
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hizmet_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["hizmet"], "id", [], "any", false, false, false, 58)]), "html", null, true);
-            echo "\" class=\"btn btn-sm btn-danger\">Sil <i class=\"fas fa-trash\"></i></a></td>
+            echo "\" class=\"btn btn-sm btn-danger \">Bu Hizmet Silinemez! <i class=\"fas fa-trash\"></i></a></td>
                     </tr>
                 ";
         }
@@ -285,7 +285,7 @@ class __TwigTemplate_1fcc6b21d4672451eabbaff3769837a684ad339d57ad4662ad0a02025b2
                         <td>{{ hizmet.keyword | slice(0,15) }}</td>
                         <td>{{ hizmet.description | slice(0,15) }}</td>
                         <td><a href=\"{{ path('hizmet_update',{id:hizmet.id}) }}\" class=\"btn btn-sm btn-primary\">Düzenle <i class=\"fas fa-pencil-alt\"></i></a></td>
-                        <td><a href=\"{{ path('hizmet_delete',{id:hizmet.id}) }}\" class=\"btn btn-sm btn-danger\">Sil <i class=\"fas fa-trash\"></i></a></td>
+                        <td><a href=\"{{ path('hizmet_delete',{id:hizmet.id}) }}\" class=\"btn btn-sm btn-danger \">Bu Hizmet Silinemez! <i class=\"fas fa-trash\"></i></a></td>
                     </tr>
                 {% endfor %}
                 </tbody>

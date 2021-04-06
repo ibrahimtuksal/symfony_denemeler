@@ -58,26 +58,35 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\"
               integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
+        <script src=\"/assets/js/bootstrap.bundle.js\"></script>
 
         ";
-        // line 13
+        // line 14
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 17
         echo "
         ";
-        // line 17
+        // line 18
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 20
+        // line 21
         echo "    </head>
     <body>
         ";
-        // line 22
-        $this->displayBlock('body', $context, $blocks);
         // line 23
+        $this->displayBlock('body', $context, $blocks);
+        // line 24
         echo "
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
-        <script src=\"assets/js/bootstrap.js\"></script>
+        <script src=\"/assets/js/bootstrap.js\"></script>
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle=\"tooltip\"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js\"></script>
+        <script src=\"/assets/js/bootstrap.bundle.js\"></script>
         </body>
 </html>
 ";
@@ -108,7 +117,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 13
+    // line 14
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -118,9 +127,9 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 14
-        echo "            ";
         // line 15
+        echo "            ";
+        // line 16
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -130,7 +139,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 17
+    // line 18
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -140,9 +149,9 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
-        echo "            ";
         // line 19
+        echo "            ";
+        // line 20
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -152,7 +161,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 22
+    // line 23
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -177,7 +186,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     public function getDebugInfo()
     {
-        return array (  156 => 22,  146 => 19,  144 => 18,  134 => 17,  124 => 15,  122 => 14,  112 => 13,  93 => 5,  77 => 23,  75 => 22,  71 => 20,  69 => 17,  66 => 16,  64 => 13,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  165 => 23,  155 => 20,  153 => 19,  143 => 18,  133 => 16,  131 => 15,  121 => 14,  102 => 5,  78 => 24,  76 => 23,  72 => 21,  70 => 18,  67 => 17,  65 => 14,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -193,6 +202,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\"
               integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
+        <script src=\"/assets/js/bootstrap.bundle.js\"></script>
 
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
@@ -207,7 +217,15 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
-        <script src=\"assets/js/bootstrap.js\"></script>
+        <script src=\"/assets/js/bootstrap.js\"></script>
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle=\"tooltip\"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js\"></script>
+        <script src=\"/assets/js/bootstrap.bundle.js\"></script>
         </body>
 </html>
 ", "base.html.twig", "C:\\xampp\\htdocs\\symfony_denemeler\\templates\\base.html.twig");

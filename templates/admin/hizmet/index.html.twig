@@ -55,7 +55,7 @@
                         <td>{{ hizmet.keyword | slice(0,15) }}</td>
                         <td>{{ hizmet.description | slice(0,15) }}</td>
                         <td><a href="{{ path('hizmet_update',{id:hizmet.id}) }}" class="btn btn-sm btn-primary">Düzenle <i class="fas fa-pencil-alt"></i></a></td>
-                        <td><a href="{{ path('hizmet_delete',{id:hizmet.id}) }}" class="btn btn-sm btn-danger">Sil <i class="fas fa-trash"></i></a></td>
+                        <td><a href="{{ path('hizmet_delete',{id:hizmet.id}) }}" class="btn btn-sm btn-danger ">Bu Hizmet Silinemez! <i class="fas fa-trash"></i></a></td>
                     </tr>
                 {% endfor %}
                 </tbody>

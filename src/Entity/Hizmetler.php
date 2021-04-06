@@ -41,7 +41,7 @@ class Hizmetler
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=Content::class, mappedBy="hizmet")
+     * @ORM\OneToMany(targetEntity=Content::class, mappedBy="hizmet", cascade={"remove"})
      */
     private $contents;
 

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Content;
 use App\Entity\Hizmetler;
 use App\Form\HizmetlerChangeFormType;
 use App\Form\HizmetlerFormType;
@@ -74,9 +75,10 @@ class HizmetController extends AbstractController
      */
     public function delete($id)
     {
-        $em=$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
-        $hizmet_id=$em->getRepository(Hizmetler::class)->find($id);
+        $hizmet_id = $em->getRepository(Hizmetler::class)->find($id);
+
         $em->remove($hizmet_id);
         $em->flush();
 
