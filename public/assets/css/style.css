@@ -82,6 +82,20 @@
     color:white;
 
 }
+.carousel-img
+{
+    width: 1920px;
+    height: 500px;
+    object-fit: cover;
+    filter: blur(2px) grayscale(50%);
+
+}
+.admin-img
+{
+    width: 50px;
+    height: 25px;
+    object-fit: cover;
+}
 .getSetting{
     text-decoration: none;
     border:0px;

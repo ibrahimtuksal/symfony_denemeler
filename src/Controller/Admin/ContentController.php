@@ -105,7 +105,6 @@ class ContentController extends AbstractController
         $content = $em->getRepository(Content::class)->find($id);
         $lastPhoto = $content->getPhoto();
         $form=$this->createForm(ContentChangeFormType::class, $content);
-    // TODO: üstte eski resim yolu tut foto varsa ekle yoksa eski değişkeni ata ve varsa eski fotoyu sil
 
         $form->handleRequest($request);
         if ( $form->isSubmitted() && $form->isValid() ){
@@ -158,10 +157,19 @@ class ContentController extends AbstractController
     public function delete($id)
     {
         $em=$this->getDoctrine()->getManager();
+
         $content=$em->getRepository(Content::class)->find($id);
+        $lastPhoto = $content->getPhoto();
+
+        $filesystem = new Filesystem();
+        $filesystem->remove($lastPhoto);
+
         $em->remove($content);
+
         $em->flush();
+
         $this->addFlash('content_delete',"İçerik Başarıyla Silindi <i class='fas fa-trash'></i>");
+
         return $this->redirectToRoute('content_home');
     }
 

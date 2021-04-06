@@ -11,8 +11,17 @@
 
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-md-2 d-grid gap-2 mb-3">
-            <a href="design.php" class="btn btn-dark">Genel Ayarlar <i class="fas fa-cog"></i></a>
+        <div class="col-md-2 mb-3">
+            <div class="dropdown d-grid gap-2">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-cog"></i> Genel Ayarlar
+                </button>
+                <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ path('banner_home') }}">Banner Ayarları <i class="fas fa-images"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
         </div>
         <div class="col-md-2 d-grid gap-2 mb-3">
             <a href="{{ path('hizmet_home') }}" class="btn btn-dark">Hizmetler <i class="fas fa-bars"></i></a>
