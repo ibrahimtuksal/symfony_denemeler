@@ -65,6 +65,9 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
+        echo "    ";
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\HomeController:header"));
+        // line 6
         echo "
 <div class=\"container-fluid\">
     <div class=\"row justify-content-md-center\">
@@ -72,9 +75,9 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
             <div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-bs-ride=\"carousel\">
                 <div class=\"carousel-indicators\">
                     ";
-        // line 10
+        // line 12
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["banners"]) || array_key_exists("banners", $context) ? $context["banners"] : (function () { throw new RuntimeError('Variable "banners" does not exist.', 10, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["banners"]) || array_key_exists("banners", $context) ? $context["banners"] : (function () { throw new RuntimeError('Variable "banners" does not exist.', 12, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -89,15 +92,15 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["banner"]) {
-            // line 11
+            // line 13
             echo "                    <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 13), "html", null, true);
             echo "\" ";
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 11), 0))) {
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 13), 0))) {
                 echo " class=\"active\" ";
             }
             echo " aria-current=\"true\" aria-label=\"Slide ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 13), "html", null, true);
             echo "\"></button>
                     ";
             ++$context['loop']['index0'];
@@ -112,14 +115,14 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['banner'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
+        // line 15
         echo "                </div>
                 <div class=\"carousel-inner\">
 
                     ";
-        // line 16
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["banners"]) || array_key_exists("banners", $context) ? $context["banners"] : (function () { throw new RuntimeError('Variable "banners" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["banners"]) || array_key_exists("banners", $context) ? $context["banners"] : (function () { throw new RuntimeError('Variable "banners" does not exist.', 18, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -134,37 +137,37 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["banner"]) {
-            // line 17
+            // line 19
             echo "                        <div";
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 17), 0))) {
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 19), 0))) {
                 echo " class=\"carousel-item active\"";
             } else {
                 echo " class=\"carousel-item\"";
             }
             echo ">
                             <img src=\"";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "photo", [], "any", false, false, false, 18), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "photo", [], "any", false, false, false, 20), "html", null, true);
             echo "\" class=\"d-block w-100 carousel-img\" alt=\"...\">
                             <div class=\"carousel-caption d-none d-md-block carousel-text-bg\">
                                 <h5 class=\"carousel-text\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "title", [], "any", false, false, false, 20), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "title", [], "any", false, false, false, 22), "html", null, true);
             echo "</h5>
                                 <p class=\"carousel-text\">";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "description", [], "any", false, false, false, 21), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "description", [], "any", false, false, false, 23), "html", null, true);
             echo "</p>
                                 ";
-            // line 22
-            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["banner"], "path", [], "any", false, false, false, 22), "yok"))) {
-                // line 23
+            // line 24
+            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["banner"], "path", [], "any", false, false, false, 24), "yok"))) {
+                // line 25
                 echo "                                    <a href=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "path", [], "any", false, false, false, 23), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banner"], "path", [], "any", false, false, false, 25), "html", null, true);
                 echo "\" class=\"btn btn-purple mb-3\">İçeriğe Git <i class=\"fas fa-arrow-right\"></i></a>
                                 ";
             }
-            // line 25
+            // line 27
             echo "                                <div class=\"d-grid gap-2\">
                                     <a href=\"\" class=\"btn btn-success mb-3\">Hemen Tıkla Ara <i class=\"fas fa-phone\"></i></a>
                                 </div>
@@ -183,7 +186,7 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['banner'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 33
         echo "
                 </div>
                 <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide=\"prev\">
@@ -201,31 +204,31 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
     <div class=\"container my-5\">
         <div class=\"row my-5\">
             ";
-        // line 47
+        // line 49
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["generals"]) || array_key_exists("generals", $context) ? $context["generals"] : (function () { throw new RuntimeError('Variable "generals" does not exist.', 47, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["generals"]) || array_key_exists("generals", $context) ? $context["generals"] : (function () { throw new RuntimeError('Variable "generals" does not exist.', 49, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 48
+            // line 50
             echo "            <div class=\"col-md-4 my-5 text-center\">
                 <i class=\"";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "icon", [], "any", false, false, false, 49), "html", null, true);
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "icon", [], "any", false, false, false, 51), "html", null, true);
             echo " features-i\"></i>
                 <p class=\"features-t\">";
-            // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 50), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 52), "html", null, true);
             echo "</p>
                 <p class=\"features-c\">
                     ";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 52), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 54), "html", null, true);
             echo "
                 </p>
                 <a href=\"";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, false, 54), "html", null, true);
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "path", [], "any", false, false, false, 56), "html", null, true);
             echo "\" target=\"_blank\" class=\"btn btn-purple\"><i class=\"fas fa-align-left\"></i> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 56), "html", null, true);
             echo "</a>
             </div>
             ";
@@ -233,7 +236,7 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 59
         echo "        </div>
     </div>
 
@@ -247,15 +250,15 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         </div>
         <div class=\"row justify-content-md-center my-5\">
             ";
-        // line 69
+        // line 71
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["hizmetler"]) || array_key_exists("hizmetler", $context) ? $context["hizmetler"] : (function () { throw new RuntimeError('Variable "hizmetler" does not exist.', 69, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["hizmetler"]) || array_key_exists("hizmetler", $context) ? $context["hizmetler"] : (function () { throw new RuntimeError('Variable "hizmetler" does not exist.', 71, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["hizmet"]) {
-            // line 70
+            // line 72
             echo "                <div class=\"col-md-3 my-5 text-center services pb-4\">
                     <p><i class=\"fas fa-tint purple\"></i> ";
-            // line 71
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hizmet"], "isim", [], "any", false, false, false, 71), "html", null, true);
+            // line 73
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hizmet"], "isim", [], "any", false, false, false, 73), "html", null, true);
             echo "</p>
                     <hr class=\"mb-2\" style=\"width: 20%;margin: auto;\">
                     <a href=\"\" class=\"services-link\">Hizmete Git <i class=\"fas fa-chevron-right\"></i></a>
@@ -265,7 +268,7 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hizmet'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 76
+        // line 78
         echo "        </div>
     </div>
 
@@ -319,9 +322,9 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
     </div>
 
 ";
-        // line 128
-        $this->loadTemplate("home/inc/footer.html.twig", "home/index.html.twig", 128)->display($context);
-        // line 129
+        // line 130
+        $this->loadTemplate("home/inc/footer.html.twig", "home/index.html.twig", 130)->display($context);
+        // line 131
         echo "
 ";
         
@@ -344,7 +347,7 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
 
     public function getDebugInfo()
     {
-        return array (  325 => 129,  323 => 128,  269 => 76,  258 => 71,  255 => 70,  251 => 69,  237 => 57,  226 => 54,  221 => 52,  216 => 50,  212 => 49,  209 => 48,  205 => 47,  187 => 31,  168 => 25,  162 => 23,  160 => 22,  156 => 21,  152 => 20,  147 => 18,  138 => 17,  121 => 16,  116 => 13,  93 => 11,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  328 => 131,  326 => 130,  272 => 78,  261 => 73,  258 => 72,  254 => 71,  240 => 59,  229 => 56,  224 => 54,  219 => 52,  215 => 51,  212 => 50,  208 => 49,  190 => 33,  171 => 27,  165 => 25,  163 => 24,  159 => 23,  155 => 22,  150 => 20,  141 => 19,  124 => 18,  119 => 15,  96 => 13,  79 => 12,  71 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -352,7 +355,9 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-
+    {{ render(controller(
+        'App\\\\Controller\\\\HomeController:header'
+    )) }}
 <div class=\"container-fluid\">
     <div class=\"row justify-content-md-center\">
         <div class=\"col-md-12 p-b-zero\">

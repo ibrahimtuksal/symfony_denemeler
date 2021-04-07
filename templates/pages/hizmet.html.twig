@@ -3,8 +3,9 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    {% include 'home/inc/header.html.twig' %}
-
+    {{ render(controller(
+        'App\\Controller\\HomeController:header'
+    )) }}
     
 
     {% include 'home/inc/footer.html.twig' %}

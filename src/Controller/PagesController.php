@@ -18,9 +18,10 @@ class PagesController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $about = $em->getRepository(About::class)->findOneBy(['slug' => $slug]);
-
+        $aboutNotIn = $em->getRepository(About::class)->findOneBySomeField([$about->getId()]);
         return $this->render('pages/about.html.twig', [
-            'about' => $about
+            'about' => $about,
+            'aboutNotIn' => $aboutNotIn
         ]);
     }
 }

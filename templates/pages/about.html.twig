@@ -3,6 +3,9 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+    {{ render(controller(
+        'App\\Controller\\HomeController:header'
+    )) }}
     <div class="container-fluid my-5">
         <div class="row my-5 justify-content-md-center">
             <div class="col-md-1 text-start">
@@ -18,10 +21,35 @@
             </div>
         </div>
         <div class="row justify-content-md-center">
-            <div class="col-md-8">
-                <p class="text-center h5">
+            <div class="col-md-7">
+                <p class="text-center h5 weight-normal">
                     {{ about.description }}
                 </p>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-md-12 text-center">
+                <p class="text-center display-5">Diğer Biz Kimiz Yazıları</p>
+                {% for item in aboutNotIn %}
+                    <p>
+                        <a href="{{ path('about_page', {slug:item.slug}) }}" class="link-dark text-center h6">
+                            {{ item.title }}
+                        </a>
+                    </p>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row justify-content-md-center my-5">
+            <div class="col-md-5 text-center">
+                <p class="h3">İletişim</p>
+                <hr>
+                <div class="d-grid gap-2 my-3">
+                    <a href="" class="btn btn-purple">Tıkla Ara <i class="fas fa-phone"></i></a>
+                </div>
+                <div class="d-grid gap-2 my-3">
+                    <a href="" class="btn btn-success">Whatsapp İletişim <i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
         </div>
     </div>

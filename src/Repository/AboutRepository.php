@@ -19,32 +19,32 @@ class AboutRepository extends ServiceEntityRepository
         parent::__construct($registry, About::class);
     }
 
-    // /**
-    //  * @return About[] Returns an array of About objects
-    //  */
-    /*
-    public function findByExampleField($value)
+//     /**
+//      * @return About[] Returns an array of About objects
+//      */
+//
+//    public function findByExampleField($value)
+//    {
+//        $qb  = $this->_em->createQueryBuilder();
+//        return $this->createQueryBuilder('a')
+//            ->where($qb->expr()->notIn('a.id', $value))
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
+
+
+    public function findOneBySomeField($value)
     {
+        $qb  = $this->_em->createQueryBuilder();
         return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
+            ->where($qb->expr()->notIn('a.id', $value))
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?About
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
