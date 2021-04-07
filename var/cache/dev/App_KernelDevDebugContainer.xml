@@ -412,6 +412,9 @@
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
+    <service id="App\Form\AboutFormType" class="App\Form\AboutFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\BannerChangeFormType" class="App\Form\BannerChangeFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -446,6 +449,10 @@
     </service>
     <service id="App\Form\SSSFormType" class="App\Form\SSSFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\AboutRepository" class="App\Repository\AboutRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\BannerRepository" class="App\Repository\BannerRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -956,6 +963,7 @@
         <argument>FOS\CKEditorBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AboutFormType</argument>
         <argument>App\Form\BannerChangeFormType</argument>
         <argument>App\Form\BannerFormType</argument>
         <argument>App\Form\BolgelerFormType</argument>
@@ -1325,7 +1333,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.Qow1DvC"/>
+      <argument type="service" id=".service_locator.aBQY5t7"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4310,7 +4318,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.iviB8j_"/>
+      <argument type="service" id=".service_locator.xR1XoRn"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5464,6 +5472,8 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AboutFormType" class="App\Form\AboutFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AboutFormType" class="App\Form\AboutFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BannerChangeFormType" class="App\Form\BannerChangeFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BannerChangeFormType" class="App\Form\BannerChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BannerFormType" class="App\Form\BannerFormType" autowire="true" abstract="true"/>
@@ -5486,6 +5496,8 @@
     <service id=".abstract.instanceof.App\Form\SSSChangeFormType" class="App\Form\SSSChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SSSFormType" class="App\Form\SSSFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SSSFormType" class="App\Form\SSSFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AboutRepository" class="App\Repository\AboutRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AboutRepository" class="App\Repository\AboutRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BannerRepository" class="App\Repository\BannerRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BannerRepository" class="App\Repository\BannerRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BolgelerRepository" class="App\Repository\BolgelerRepository" autowire="true" abstract="true"/>
@@ -5911,9 +5923,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Qow1DvC" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.aBQY5t7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AboutFormType" type="service" id="App\Form\AboutFormType"/>
         <argument key="App\Form\BannerChangeFormType" type="service" id="App\Form\BannerChangeFormType"/>
         <argument key="App\Form\BannerFormType" type="service" id="App\Form\BannerFormType"/>
         <argument key="App\Form\BolgelerFormType" type="service" id="App\Form\BolgelerFormType"/>
@@ -6094,9 +6107,10 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.iviB8j_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.xR1XoRn" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\AboutRepository" type="service" id="App\Repository\AboutRepository"/>
         <argument key="App\Repository\BannerRepository" type="service" id="App\Repository\BannerRepository"/>
         <argument key="App\Repository\BolgelerRepository" type="service" id="App\Repository\BolgelerRepository"/>
         <argument key="App\Repository\ContentRepository" type="service" id="App\Repository\ContentRepository"/>

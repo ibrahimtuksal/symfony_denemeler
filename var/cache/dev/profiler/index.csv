@@ -304,3 +304,5 @@ c362e0,::1,GET,http://localhost:4000/admin/generalinformation/info,1617789937,,2
 6e2849,::1,GET,http://localhost:4000/admin/generalinformation,1617790251,,200
 8c8856,::1,GET,http://localhost:4000/,1617790281,,200
 39bd4f,::1,GET,http://localhost:4000/admin/generalinformation,1617790328,,200
+cda650,::1,GET,http://localhost:4000/admin/generalinformation,1617790631,,200
+ffcff6,::1,GET,http://localhost:4000/admin/generalinformation/create,1617790633,,200
