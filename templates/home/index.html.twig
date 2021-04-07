@@ -1,9 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
 {% block body %}
-    {% include 'home/inc/header.html.twig' %}
+
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-md-12 p-b-zero">
@@ -72,7 +70,7 @@
                 <div class="col-md-3 my-5 text-center services pb-4">
                     <p><i class="fas fa-tint purple"></i> {{ hizmet.isim }}</p>
                     <hr class="mb-2" style="width: 20%;margin: auto;">
-                    <a href="{{ path('hizmet', {slug:hizmet.slug}) }}" class="services-link">Hizmete Git <i class="fas fa-chevron-right"></i></a>
+                    <a href="" class="services-link">Hizmete Git <i class="fas fa-chevron-right"></i></a>
                 </div>
             {% endfor %}
         </div>
@@ -87,7 +85,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-5">
                 <img src="https://via.placeholder.com/400x250" class="content-i img-fluid" alt="">
                 <p class="content-t mt-3">
                     Başlık

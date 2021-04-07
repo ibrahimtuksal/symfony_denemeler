@@ -15,6 +15,9 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'about_home' => [[], ['_controller' => 'App\\Controller\\Admin\\AboutController::index'], [], [['text', '/admin/about']], [], []],
+    'about_create' => [[], ['_controller' => 'App\\Controller\\Admin\\AboutController::create'], [], [['text', '/admin/about/create']], [], []],
+    'about_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AboutController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/about/update']], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin']], [], []],
     'banner_home' => [[], ['_controller' => 'App\\Controller\\Admin\\BannerController::index'], [], [['text', '/admin/banner']], [], []],
     'banner_create' => [[], ['_controller' => 'App\\Controller\\Admin\\BannerController::create'], [], [['text', '/admin/banner/create']], [], []],
@@ -41,7 +44,7 @@ return [
     'sss_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SSSController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admim/sss/update']], [], []],
     'sss_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SSSController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/sss/delete']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
-    'hizmet' => [['slug'], ['_controller' => 'App\\Controller\\HomeController::hizmet'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/hizmet']], [], []],
+    'about_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::about'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/about']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

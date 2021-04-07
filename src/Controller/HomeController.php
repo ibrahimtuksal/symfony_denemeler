@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\About;
 use App\Entity\Banner;
 use App\Entity\GeneralInformation;
 use App\Entity\Hizmetler;
@@ -24,24 +25,27 @@ class HomeController extends AbstractController
 
         $generalInformation = $em->getRepository(GeneralInformation::class)->findBy([],['desk' => 'asc']);
 
+
+
         return $this->render('home/index.html.twig', [
-            'hizmetler' => $hizmetler,
             'banners' => $banner,
-            'generals' => $generalInformation
+            'generals' => $generalInformation,
+            'hizmetler' => $hizmetler
+
         ]);
     }
 
-    /**
-     * @Route("/hizmet/{slug}", name="hizmet")
-     */
-    public function hizmet($slug)
+    public function header()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $hizmetler = $em->getRepository(Hizmetler::class)->findOneBy(['slug' => $slug]);
+        $hizmetler = $em->getRepository(Hizmetler::class)->findAll();
+        $about = $em->getRepository(About::class)->findAll();
 
-        return $this->render('pages/hizmet.html.twig', [
-            'hizmetler' => $hizmetler
+        return $this->render('home/inc/header.html.twig',[
+            'hizmetlerHeader' => $hizmetler,
+            'about' => $about
         ]);
     }
+
 }

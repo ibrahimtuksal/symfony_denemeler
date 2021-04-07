@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <div class="col-md-2 px-lg-3 mx-auto mb-3">
-            <a class="navbar-brand brand-title" href="#"><i class="fas fa-tint"></i> Su Tesisatçısı</a>
+            <a class="navbar-brand brand-title" href="#"><img src="/images/logo.png" class="img-fluid m-auto logo" alt=""> Su Tesisatçısı</a>
             <button class="navbar-toggler text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -10,14 +10,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link menu" href="#">&nbsp;<i class="fas fa-home"></i>&nbsp;</a>
+                        <a class="nav-link menu" href="/">&nbsp;<i class="fas fa-home"></i>&nbsp;</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Hizmetlerimiz
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for hizmet in hizmetler %}
+                            {% for hizmet in hizmetlerHeader %}
                                 <li><a class="dropdown-item" href="#">{{ hizmet.isim }}</a></li>
                             {% endfor %}
                         </ul>
@@ -27,6 +27,16 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu" href="#">Bölgelerimiz <i class="fas fa-city"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Biz Kimiz
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for item in about %}
+                                <li><a class="dropdown-item" href="/about/{{ item.slug }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu" href="#">İletişim <i class="far fa-id-card"></i></a>

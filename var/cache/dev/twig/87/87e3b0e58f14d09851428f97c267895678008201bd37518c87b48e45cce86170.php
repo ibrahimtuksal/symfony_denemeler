@@ -71,10 +71,15 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         // line 21
         echo "    </head>
     <body>
-        ";
+    ";
         // line 23
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\HomeController:header"));
+        // line 25
+        echo "
+        ";
+        // line 26
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 27
         echo "
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
@@ -108,7 +113,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Su Tesisatçısı";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -161,7 +166,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 23
+    // line 26
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -184,9 +189,14 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  165 => 23,  155 => 20,  153 => 19,  143 => 18,  133 => 16,  131 => 15,  121 => 14,  102 => 5,  78 => 24,  76 => 23,  72 => 21,  70 => 18,  67 => 17,  65 => 14,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  170 => 26,  160 => 20,  158 => 19,  148 => 18,  138 => 16,  136 => 15,  126 => 14,  107 => 5,  83 => 27,  81 => 26,  78 => 25,  76 => 23,  72 => 21,  70 => 18,  67 => 17,  65 => 14,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -195,7 +205,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Su Tesisatçısı{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
@@ -213,6 +223,9 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         {% endblock %}
     </head>
     <body>
+    {{ render(controller(
+        'App\\\\Controller\\\\HomeController:header'
+    )) }}
         {% block body %}{% endblock %}
 
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>

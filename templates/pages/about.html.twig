@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid my-5">
+        <div class="row my-5 justify-content-md-center">
+            <div class="col-md-1 text-start">
+                <img src="/images/tesisatci.png" class="img-fluid" width="100" alt="">
+            </div>
+            <div class="col-md-5 border-bottom">
+                <p class="display-6 text-center">
+                    {{ about.title }}
+                </p>
+            </div>
+            <div class="col-md-1">
+                <img src="/images/tesisatci.png" class="img-fluid tesisat-flip" width="100" alt="">
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <p class="text-center h5">
+                    {{ about.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+    {% include 'home/inc/footer.html.twig' %}
+{% endblock %}

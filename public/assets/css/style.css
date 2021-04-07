@@ -1,3 +1,15 @@
+body
+{
+background-color: #F3F3F3;
+}
+.logo{
+    width: 50px;
+    height: 37px;
+}
+.tesisat-flip{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 .purple
 {
     color: #AD33FF;
@@ -13,8 +25,8 @@
 }
 .brand-title
 {
-    border-bottom: 2px solid #AD33FF;
     font-size: 25px;
+    font-weight: 700;
 }
 .btn-purple
 {
