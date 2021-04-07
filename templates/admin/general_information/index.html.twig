@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Yönetim Paneli{% endblock %}
+
+{% block body %}
+    {% include 'admin/inc/header.html.twig' %}
+    <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                {% for flashMessage in app.session.flashbag.get('generali_create') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('generali_update') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('generali_remove') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-4 d-grid gap-2">
+                <a href="{{ path('generali_info') }}" class="btn btn-danger">İkon Nasıl Eklenir Nereden Eklenir Bilgi İçin Tıklayınız</a>
+            </div>
+            <div class="col-md-4 d-grid gap-2">
+                <a target="_blank" class="btn btn-dark" href="https://fontawesome.com/icons?d=gallery&p=2&m=free">İkonlar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="col-md-4 d-grid gap-2">
+                <a href="{{ path('generali_create') }}" class="btn btn-warning">Ekle <i class="fas fa-plus"></i></a>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+                <table class="table table-responsive table-hover text-center">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th scope="col">İkon</th>
+                        <th scope="col">Başlık</th>
+                        <th scope="col">Düzenle</th>
+                        <th scope="col">Sil</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in generals %}
+                        <tr>
+                            <td>#</td>
+                            <td><i class="{{ item.icon }}"></i></td>
+                            <td>{{ item.title }}</td>
+                            <td><a href="{{ path('generali_update', {id:item.id}) }}" class="btn btn-sm btn-primary">Düzenle <i class="fas fa-pencil-alt"></i></a></td>
+                            <td><a href="{{ path('generali_remove', {id:item.id}) }}" class="btn btn-sm btn-danger">Sil <i class="fas fa-trash"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -17,22 +17,31 @@ class BannerFormType extends AbstractType
         $builder
             ->add('photo', FileType::class, [
                 'label' => 'Banner',
+                'required' => true,
                 'attr' => ['class' => 'form-control']
             ])
             ->add('title', TextType::class, [
                 'label' => 'Başlık',
+                'required' => true,
                 'attr' => ['class' => 'form-control'],
                 'row_attr' => ['class' => 'mb-3']
             ])
             ->add('description', TextType::class, [
                 'label' => 'Açıklama',
                 'attr' => ['class' => 'form-control'],
+                'required' => true,
                 'row_attr' => ['class' => 'mb-3']
             ])
             ->add('path', TextType::class, [
-                'label' => 'Buton Yol (örnek ekleme: https://www.tuksal.com)',
+                'label' => 'Buton Yol (örnek ekleme: https://www.tuksal.com), Yoksa \'yok\' yazınız',
                 'required' => false,
                 'attr' => ['class' => 'form-control'],
+                'row_attr' => ['class' => 'mb-3']
+            ])
+            ->add('desk', TextType::class, [
+                'label' => 'Gösterim Sırası (Örnek kullanım: 1) ',
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
                 'row_attr' => ['class' => 'mb-3']
             ])
             ->add('submit', SubmitType::class, [

@@ -87,8 +87,17 @@
     width: 1920px;
     height: 500px;
     object-fit: cover;
-    filter: blur(2px) grayscale(50%);
+    filter: invert(20%);
 
+}
+.carousel-text-bg
+{
+    padding: 15px;
+    margin: 0 300px;
+}
+.carousel-text
+{
+    text-shadow:1px 1px black;
 }
 .admin-img
 {

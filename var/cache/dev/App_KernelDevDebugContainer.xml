@@ -366,6 +366,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\Admin\ContentController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\Admin\GeneralInformationController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\HizmetController" class="App\Controller\Admin\HizmetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -422,6 +429,12 @@
       <tag name="form.type"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
+    <service id="App\Form\GeneralInformationChangeFormType" class="App\Form\GeneralInformationChangeFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\GeneralInformationFormType" class="App\Form\GeneralInformationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\HizmetlerChangeFormType" class="App\Form\HizmetlerChangeFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -443,6 +456,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ContentRepository" class="App\Repository\ContentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\GeneralInformationRepository" class="App\Repository\GeneralInformationRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -944,6 +961,8 @@
         <argument>App\Form\BolgelerFormType</argument>
         <argument>App\Form\ContentChangeFormType</argument>
         <argument>App\Form\ContentFormType</argument>
+        <argument>App\Form\GeneralInformationChangeFormType</argument>
+        <argument>App\Form\GeneralInformationFormType</argument>
         <argument>App\Form\HizmetlerChangeFormType</argument>
         <argument>App\Form\HizmetlerFormType</argument>
         <argument>App\Form\SSSChangeFormType</argument>
@@ -1306,7 +1325,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.ftPsGzx"/>
+      <argument type="service" id=".service_locator.Qow1DvC"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4291,7 +4310,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.C.uFPpU"/>
+      <argument type="service" id=".service_locator.iviB8j_"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5425,6 +5444,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ContentController" class="App\Controller\Admin\ContentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ContentController" class="App\Controller\Admin\ContentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ContentController" class="App\Controller\Admin\ContentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\HizmetController" class="App\Controller\Admin\HizmetController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\HizmetController" class="App\Controller\Admin\HizmetController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\HizmetController" class="App\Controller\Admin\HizmetController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5452,6 +5474,10 @@
     <service id=".abstract.instanceof.App\Form\ContentChangeFormType" class="App\Form\ContentChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContentFormType" class="App\Form\ContentFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContentFormType" class="App\Form\ContentFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GeneralInformationChangeFormType" class="App\Form\GeneralInformationChangeFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\GeneralInformationChangeFormType" class="App\Form\GeneralInformationChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GeneralInformationFormType" class="App\Form\GeneralInformationFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\GeneralInformationFormType" class="App\Form\GeneralInformationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HizmetlerChangeFormType" class="App\Form\HizmetlerChangeFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HizmetlerChangeFormType" class="App\Form\HizmetlerChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HizmetlerFormType" class="App\Form\HizmetlerFormType" autowire="true" abstract="true"/>
@@ -5466,6 +5492,8 @@
     <service id=".abstract.instanceof.App\Repository\BolgelerRepository" class="App\Repository\BolgelerRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContentRepository" class="App\Repository\ContentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContentRepository" class="App\Repository\ContentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GeneralInformationRepository" class="App\Repository\GeneralInformationRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GeneralInformationRepository" class="App\Repository\GeneralInformationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HizmetlerRepository" class="App\Repository\HizmetlerRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HizmetlerRepository" class="App\Repository\HizmetlerRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MahalleRepository" class="App\Repository\MahalleRepository" autowire="true" abstract="true"/>
@@ -5883,7 +5911,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ftPsGzx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Qow1DvC" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\BannerChangeFormType" type="service" id="App\Form\BannerChangeFormType"/>
@@ -5891,6 +5919,8 @@
         <argument key="App\Form\BolgelerFormType" type="service" id="App\Form\BolgelerFormType"/>
         <argument key="App\Form\ContentChangeFormType" type="service" id="App\Form\ContentChangeFormType"/>
         <argument key="App\Form\ContentFormType" type="service" id="App\Form\ContentFormType"/>
+        <argument key="App\Form\GeneralInformationChangeFormType" type="service" id="App\Form\GeneralInformationChangeFormType"/>
+        <argument key="App\Form\GeneralInformationFormType" type="service" id="App\Form\GeneralInformationFormType"/>
         <argument key="App\Form\HizmetlerChangeFormType" type="service" id="App\Form\HizmetlerChangeFormType"/>
         <argument key="App\Form\HizmetlerFormType" type="service" id="App\Form\HizmetlerFormType"/>
         <argument key="App\Form\SSSChangeFormType" type="service" id="App\Form\SSSChangeFormType"/>
@@ -6064,12 +6094,13 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.C.uFPpU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.iviB8j_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BannerRepository" type="service" id="App\Repository\BannerRepository"/>
         <argument key="App\Repository\BolgelerRepository" type="service" id="App\Repository\BolgelerRepository"/>
         <argument key="App\Repository\ContentRepository" type="service" id="App\Repository\ContentRepository"/>
+        <argument key="App\Repository\GeneralInformationRepository" type="service" id="App\Repository\GeneralInformationRepository"/>
         <argument key="App\Repository\HizmetlerRepository" type="service" id="App\Repository\HizmetlerRepository"/>
         <argument key="App\Repository\MahalleRepository" type="service" id="App\Repository\MahalleRepository"/>
         <argument key="App\Repository\SSSRepository" type="service" id="App\Repository\SSSRepository"/>
@@ -6159,6 +6190,12 @@
     <service id=".service_locator.5nX7ca3.App\Controller\Admin\ContentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ContentController"/>
       <argument>App\Controller\Admin\ContentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\Admin\GeneralInformationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\GeneralInformationController"/>
+      <argument>App\Controller\Admin\GeneralInformationController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>

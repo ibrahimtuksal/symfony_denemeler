@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Banner;
+use App\Entity\GeneralInformation;
 use App\Entity\Hizmetler;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,8 +20,14 @@ class HomeController extends AbstractController
 
         $hizmetler = $em->getRepository(Hizmetler::class)->findAll();
 
+        $banner = $em->getRepository(Banner::class)->findBy([],['desk' => 'asc']);
+
+        $generalInformation = $em->getRepository(GeneralInformation::class)->findBy([],['desk' => 'asc']);
+
         return $this->render('home/index.html.twig', [
-            'hizmetler' => $hizmetler
+            'hizmetler' => $hizmetler,
+            'banners' => $banner,
+            'generals' => $generalInformation
         ]);
     }
 

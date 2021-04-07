@@ -35,7 +35,12 @@ class Banner
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $path;
+    private $path = "yok";
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $desk;
 
     public function getId(): ?int
     {
@@ -83,9 +88,21 @@ class Banner
         return $this->path;
     }
 
-    public function setPath(string $path): self
+    public function setPath(?string $path): self
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    public function getDesk(): ?int
+    {
+        return $this->desk;
+    }
+
+    public function setDesk(int $desk): self
+    {
+        $this->desk = $desk;
 
         return $this;
     }

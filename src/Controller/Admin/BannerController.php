@@ -58,6 +58,11 @@ class BannerController extends AbstractController
 
                 $banner->setPhoto("uploads/brochures/".$newFilename);
             }
+            $control = $form->get('path')->getData();
+            if ($control == "yok" || null || "")
+            {
+                $banner->setPath("yok");
+            }
             $em->persist($banner);
             $em->flush();
 
@@ -102,6 +107,13 @@ class BannerController extends AbstractController
             else{
                 $banner->setPhoto($lastPhoto);
             }
+
+            $control = $form->get('path')->getData();
+            if ($control == "yok" || null || "")
+            {
+                $banner->setPath("yok");
+            }
+
             $em->flush();
             $this->addFlash('banner_update', "Banner Başarıyla Güncellendi <i class='fas fa-pencil-alt'></i>");
             return $this->redirectToRoute('banner_home');
