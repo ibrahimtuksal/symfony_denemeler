@@ -78,6 +78,7 @@ return [
                     .')'
                     .'|bout/([^/]++)(*:526)'
                 .')'
+                .'|/hizmet/([^/]++)(*:551)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -99,8 +100,9 @@ return [
         446 => [[['_route' => 'hizmet_delete', '_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], ['id'], null, null, false, true, null]],
         474 => [[['_route' => 'sss_delete', '_controller' => 'App\\Controller\\Admin\\SSSController::delete'], ['id'], null, null, false, true, null]],
         504 => [[['_route' => 'sss_update', '_controller' => 'App\\Controller\\Admin\\SSSController::update'], ['id'], null, null, false, true, null]],
-        526 => [
-            [['_route' => 'about_page', '_controller' => 'App\\Controller\\PagesController::about'], ['slug'], null, null, false, true, null],
+        526 => [[['_route' => 'about_page', '_controller' => 'App\\Controller\\PagesController::about'], ['slug'], null, null, false, true, null]],
+        551 => [
+            [['_route' => 'hizmet_page', '_controller' => 'App\\Controller\\PagesController::hizmet'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

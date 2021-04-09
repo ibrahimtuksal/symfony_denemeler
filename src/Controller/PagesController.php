@@ -12,6 +12,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class PagesController extends AbstractController
 {
     /**
+     * @Route("/hizmet/{slug}", name="hizmet_page")
+     */
+    public function hizmet($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $hizmet = $em->getRepository(Hizmetler::class)->findOneBy(['slug' => $slug]);
+        $hizmetNotIn = $em->getRepository(Hizmetler::class)->findOneBySomeField([$hizmet->getId()]);
+
+        return $this->render('pages/hizmet.html.twig', [
+            'hizmet' => $hizmet,
+            'hizmetNotIn' => $hizmetNotIn
+        ]);
+    }
+
+    /**
      * @Route("/about/{slug}", name="about_page")
      */
     public function about($slug)
@@ -20,11 +36,13 @@ class PagesController extends AbstractController
 
         $about = $em->getRepository(About::class)->findOneBy(['slug' => $slug]);
         $aboutNotIn = $em->getRepository(About::class)->findOneBySomeField([$about->getId()]);
+
         return $this->render('pages/about.html.twig', [
             'about' => $about,
             'aboutNotIn' => $aboutNotIn
         ]);
     }
+
     /**
      * @Route("/sss", name="sss_page")
      */

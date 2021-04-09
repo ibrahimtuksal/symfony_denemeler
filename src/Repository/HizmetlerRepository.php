@@ -36,15 +36,14 @@ class HizmetlerRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Hizmetler
+    public function findOneBySomeField($value)
     {
-        return $this->createQueryBuilder('h')
-            ->andWhere('h.exampleField = :val')
-            ->setParameter('val', $value)
+        $qb  = $this->_em->createQueryBuilder();
+        return $this->createQueryBuilder('a')
+            ->where($qb->expr()->notIn('a.id', $value))
+            ->setMaxResults(10)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult()
+            ;
     }
-    */
 }

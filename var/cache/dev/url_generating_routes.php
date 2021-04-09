@@ -44,6 +44,7 @@ return [
     'sss_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SSSController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admim/sss/update']], [], []],
     'sss_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SSSController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/sss/delete']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
+    'hizmet_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::hizmet'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/hizmet']], [], []],
     'about_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::about'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/about']], [], []],
     'sss_page' => [[], ['_controller' => 'App\\Controller\\PagesController::sss'], [], [['text', '/sss']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],

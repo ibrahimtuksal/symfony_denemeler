@@ -326,7 +326,7 @@ class Hizmetler extends \App\Entity\Hizmetler implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setPhoto(string $photo): \App\Entity\Hizmetler
+    public function setPhoto(?string $photo): \App\Entity\Hizmetler
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPhoto', [$photo]);

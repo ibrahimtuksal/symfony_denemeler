@@ -27,6 +27,10 @@ background-color: #F3F3F3;
     -moz-box-shadow: 0px 10px 16px -15px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 16px -15px rgba(0,0,0,0.75);
 }
+.tksl-radius
+{
+    border-radius: 35px;
+}
 .menu{
     font-size: 22px;
     margin-right: 25px;
@@ -119,6 +123,12 @@ background-color: #F3F3F3;
 .carousel-text
 {
     text-shadow:1px 1px black;
+}
+.hizmet-img
+{
+    object-fit: cover;
+    width: 420px;
+    height: 320px;
 }
 .admin-img
 {
