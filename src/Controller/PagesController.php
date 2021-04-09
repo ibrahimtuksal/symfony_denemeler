@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\About;
+use App\Entity\Content;
 use App\Entity\Hizmetler;
 use App\Entity\SSS;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -40,6 +41,22 @@ class PagesController extends AbstractController
         return $this->render('pages/about.html.twig', [
             'about' => $about,
             'aboutNotIn' => $aboutNotIn
+        ]);
+    }
+
+    /**
+     * @Route("/content/{slug}", name="content_page")
+     */
+    public function content($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $content = $em->getRepository(Content::class)->findOneBy(['slug' => $slug]);
+        $contentNotIn = $em->getRepository(Content::class)->findOneBySomeField([$content->getId()]);
+
+        return $this->render('pages/content.html.twig', [
+            'content' => $content,
+            'contentNotIn' => $contentNotIn
         ]);
     }
 

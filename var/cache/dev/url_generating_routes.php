@@ -46,6 +46,7 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'hizmet_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::hizmet'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/hizmet']], [], []],
     'about_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::about'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/about']], [], []],
+    'content_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::content'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/content']], [], []],
     'sss_page' => [[], ['_controller' => 'App\\Controller\\PagesController::sss'], [], [['text', '/sss']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],

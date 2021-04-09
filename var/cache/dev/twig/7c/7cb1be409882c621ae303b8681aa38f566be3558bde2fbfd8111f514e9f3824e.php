@@ -281,50 +281,49 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
             </div>
         </div>
         <div class=\"row\">
-            <div class=\"col-md-4 mb-5\">
-                <img src=\"https://via.placeholder.com/400x250\" class=\"content-i img-fluid\" alt=\"\">
+            ";
+        // line 90
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["contents"]) || array_key_exists("contents", $context) ? $context["contents"] : (function () { throw new RuntimeError('Variable "contents" does not exist.', 90, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["content"]) {
+            // line 91
+            echo "            <div class=\"col-md-4 mb-5\">
+                <img src=\"";
+            // line 92
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["content"], "photo", [], "any", false, false, false, 92), "html", null, true);
+            echo "\" class=\"content-i img-fluid\" alt=\"\">
                 <p class=\"content-t mt-3\">
-                    Başlık
+                    ";
+            // line 94
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["content"], "isim", [], "any", false, false, false, 94), "html", null, true);
+            echo "
                 </p>
                 <p class=\"content-c\">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
+                    ";
+            // line 97
+            echo (((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["content"], "icerik", [], "any", false, false, false, 97)), 320))) ? (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["content"], "icerik", [], "any", false, false, false, 97), 0, 320)) : (twig_get_attribute($this->env, $this->source, $context["content"], "icerik", [], "any", false, false, false, 97)));
+            echo "
                 </p>
                 <div class=\"d-grid gap-2\">
-                    <a href=\"\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
+                    <a href=\"";
+            // line 100
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_page", ["slug" => twig_get_attribute($this->env, $this->source, $context["content"], "slug", [], "any", false, false, false, 100)]), "html", null, true);
+            echo "\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
                 </div>
             </div>
-
-            <div class=\"col-md-4\">
-                <img src=\"https://via.placeholder.com/400x250\" class=\"content-i img-fluid\" alt=\"\">
-                <p class=\"content-t mt-3\">
-                    Başlık
-                </p>
-                <p class=\"content-c\">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
-                </p>
-                <div class=\"d-grid gap-2\">
-                    <a href=\"\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
-                </div>
-            </div>
-            <div class=\"col-md-4\">
-                <img src=\"https://via.placeholder.com/400x250\" class=\"content-i img-fluid\" alt=\"\">
-                <p class=\"content-t mt-3\">
-                    Başlık
-                </p>
-                <p class=\"content-c\">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
-                </p>
-                <div class=\"d-grid gap-2\">
-                    <a href=\"\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
-                </div>
-            </div>
-        </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['content'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 104
+        echo "        </div>
     </div>
 
 ";
-        // line 130
-        $this->loadTemplate("home/inc/footer.html.twig", "home/index.html.twig", 130)->display($context);
-        // line 131
+        // line 107
+        $this->loadTemplate("home/inc/footer.html.twig", "home/index.html.twig", 107)->display($context);
+        // line 108
         echo "
 ";
         
@@ -347,7 +346,7 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
 
     public function getDebugInfo()
     {
-        return array (  328 => 131,  326 => 130,  272 => 78,  261 => 73,  258 => 72,  254 => 71,  240 => 59,  229 => 56,  224 => 54,  219 => 52,  215 => 51,  212 => 50,  208 => 49,  190 => 33,  171 => 27,  165 => 25,  163 => 24,  159 => 23,  155 => 22,  150 => 20,  141 => 19,  124 => 18,  119 => 15,  96 => 13,  79 => 12,  71 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  327 => 108,  325 => 107,  320 => 104,  310 => 100,  304 => 97,  298 => 94,  293 => 92,  290 => 91,  286 => 90,  272 => 78,  261 => 73,  258 => 72,  254 => 71,  240 => 59,  229 => 56,  224 => 54,  219 => 52,  215 => 51,  212 => 50,  208 => 49,  190 => 33,  171 => 27,  165 => 25,  163 => 24,  159 => 23,  155 => 22,  150 => 20,  141 => 19,  124 => 18,  119 => 15,  96 => 13,  79 => 12,  71 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -441,43 +440,20 @@ class __TwigTemplate_61a45756365dbcd1968ccb458afdb2def5c151f30301c0372e8a861616f
             </div>
         </div>
         <div class=\"row\">
+            {% for content in contents %}
             <div class=\"col-md-4 mb-5\">
-                <img src=\"https://via.placeholder.com/400x250\" class=\"content-i img-fluid\" alt=\"\">
+                <img src=\"{{ content.photo }}\" class=\"content-i img-fluid\" alt=\"\">
                 <p class=\"content-t mt-3\">
-                    Başlık
+                    {{ content.isim }}
                 </p>
                 <p class=\"content-c\">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
+                    {{ content.icerik|length > 320 ? content.icerik|slice(0,320)|raw : content.icerik|raw }}
                 </p>
                 <div class=\"d-grid gap-2\">
-                    <a href=\"\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
+                    <a href=\"{{ path('content_page', {slug:content.slug}) }}\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
                 </div>
             </div>
-
-            <div class=\"col-md-4\">
-                <img src=\"https://via.placeholder.com/400x250\" class=\"content-i img-fluid\" alt=\"\">
-                <p class=\"content-t mt-3\">
-                    Başlık
-                </p>
-                <p class=\"content-c\">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
-                </p>
-                <div class=\"d-grid gap-2\">
-                    <a href=\"\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
-                </div>
-            </div>
-            <div class=\"col-md-4\">
-                <img src=\"https://via.placeholder.com/400x250\" class=\"content-i img-fluid\" alt=\"\">
-                <p class=\"content-t mt-3\">
-                    Başlık
-                </p>
-                <p class=\"content-c\">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
-                </p>
-                <div class=\"d-grid gap-2\">
-                    <a href=\"\" class=\"btn btn-purple\">Devamını Oku <i class=\"fas fa-arrow-right\"></i></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 

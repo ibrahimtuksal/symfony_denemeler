@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\About;
 use App\Entity\Banner;
+use App\Entity\Content;
 use App\Entity\GeneralInformation;
 use App\Entity\Hizmetler;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,12 +26,13 @@ class HomeController extends AbstractController
 
         $generalInformation = $em->getRepository(GeneralInformation::class)->findBy([],['desk' => 'asc']);
 
-
+        $content = $em->getRepository(Content::class)->findBy([],['id' => 'asc'], 6);
 
         return $this->render('home/index.html.twig', [
             'banners' => $banner,
             'generals' => $generalInformation,
-            'hizmetler' => $hizmetler
+            'hizmetler' => $hizmetler,
+            'contents' => $content
 
         ]);
     }

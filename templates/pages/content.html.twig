@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ content.isim }}{% endblock %}
+{% block description %}{{ content.description }}{% endblock %}
+{% block keywords %}{{ content.keyword }}{% endblock %}
+
+{% block body %}
+    {{ render(controller(
+        'App\\Controller\\HomeController:header'
+    )) }}
+
+    <div class="container my-5">
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 text-center mb-5">
+                <p class="display-4 text-center my-5 border-bottom">
+                    {{ content.isim }}
+                </p>
+                <img src="/{{ content.photo }}" class="img-fluid hizmet-img tksl-shadow tksl-radius"  alt="">
+            </div>
+            <div class="col-md-12 my-5">
+                {{ content.icerik | raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="display-5 text-center border-bottom ">
+                   Diğer Bilgilendirici İçerikler
+                </p>
+                <br>
+                <div class="owl-carousel owl-theme mt-3">
+                    <div class="item mx-3">
+                        <img src="https://via.placeholder.com/400x250" class="content-i img-fluid" alt="">
+                        <p class="content-t mt-3">
+                            Başlık
+                        </p>
+                        <p class="content-c">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
+                        </p>
+                        <div class="d-grid gap-2">
+                            <a href="" class="btn btn-purple">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center my-5">
+            <div class="col-md-5 text-center">
+                <p class="h3">İletişim</p>
+                <hr>
+                <div class="d-grid gap-2 my-3">
+                    <a href="" class="btn btn-purple">Tıkla Ara <i class="fas fa-phone"></i></a>
+                </div>
+                <div class="d-grid gap-2 my-3">
+                    <a href="" class="btn btn-success">Whatsapp İletişim <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'home/inc/footer.html.twig' %}
+{% endblock %}

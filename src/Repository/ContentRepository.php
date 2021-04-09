@@ -36,15 +36,14 @@ class ContentRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Content
+    public function findOneBySomeField($value)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+        $qb  = $this->_em->createQueryBuilder();
+        return $this->createQueryBuilder('a')
+            ->where($qb->expr()->notIn('a.id', $value))
+            ->setMaxResults(10)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult()
+            ;
     }
-    */
 }

@@ -25,6 +25,15 @@
                     </div>
 
                 {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('content_already') %}
+
+                    <div class="alert alert-danger">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
             </div>
         </div>
         <div class="row mt-5">

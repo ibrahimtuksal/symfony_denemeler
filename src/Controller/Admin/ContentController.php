@@ -44,11 +44,28 @@ class ContentController extends AbstractController
     public function create(Request $request, SluggerInterface $slugger): Response
     {
         $content = new Content();
+        $slugify = new Slugify();
         $em = $this->getDoctrine()->getManager();
 
         $form = $this->createForm(ContentFormType::class,$content);
         $form->handleRequest($request);
+
+        $bolgeId=$form->get('bolge')->getData();
+        $hizmetId=$form->get('hizmet')->getData();
+
         if ( $form->isSubmitted() && $form->isValid() ) {
+            $slugControl = $form->get('isim')->getData();
+            $dataSlug = $slugify->slugify($slugControl);
+            $contentControl = $this->getDoctrine()->getRepository(Content::class)->findOneBy(['slug' => $dataSlug]);
+            if (!$contentControl){
+                $slug = $slugify->slugify($form->get('isim')->getData());
+                $content->setSlug($slug);
+            } else {
+                $this->addFlash('content_already',"<i class='fas fa-exclamation'></i> <br> Böyle Bir Hizmet İsmi Var <br> İçerik Eklenemedi");
+
+                return $this->redirectToRoute('content_home');
+            }
+
             $brochureFile  = $form->get('photo')->getData();
             if ($brochureFile) {
                 $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
@@ -67,11 +84,6 @@ class ContentController extends AbstractController
                 $content->setPhoto("uploads/brochures/".$newFilename);
             }
 
-            $slugify = new Slugify();
-            $slug = $slugify->slugify($content->getIsim());
-
-            $bolgeId=$form->get('bolge')->getData();
-            $hizmetId=$form->get('hizmet')->getData();
 
             $bolge=$em->getRepository(Bolgeler::class)->find($bolgeId);
             $hizmet=$em->getRepository(Hizmetler::class)->find($hizmetId);
@@ -79,7 +91,6 @@ class ContentController extends AbstractController
                 ->setBolge($bolge)
                 ->setHizmet($hizmet)
                 ->setCreatedAt( new \DateTime())
-                ->setSlug($slug)
             ;
 
             $em->persist($content);
@@ -109,7 +120,19 @@ class ContentController extends AbstractController
         $form->handleRequest($request);
         if ( $form->isSubmitted() && $form->isValid() ){
             $slugify = new Slugify();
-            $slug = $slugify->slugify($content->getIsim());
+
+            $slugControl = $form->get('isim')->getData();
+            $dataSlug = $slugify->slugify($slugControl);
+            $contentControl = $this->getDoctrine()->getRepository(Content::class)->findOneBy(['slug' => $dataSlug]);
+            if (!$contentControl){
+                $slug = $slugify->slugify($form->get('isim')->getData());
+                $content->setSlug($slug);
+            } else {
+                $this->addFlash('content_already',"<i class='fas fa-exclamation'></i> <br> Böyle Bir Hizmet İsmi Var <br> İçerik Güncellenemedi");
+
+                return $this->redirectToRoute('content_home');
+            }
+
             $bolgeId=$form->get('bolge')->getData();
             $hizmetId=$form->get('hizmet')->getData();
 
@@ -136,11 +159,11 @@ class ContentController extends AbstractController
             } else {
                 $content->setPhoto($lastPhoto);
             }
+
             $content
                 ->setBolge($bolge)
                 ->setHizmet($hizmet)
                 ->setCreatedAt( new \DateTime())
-                ->setSlug($slug)
             ;
              $em->flush();
             $this->addFlash('content_updated',"İçerik Başarıyla Güncellendi <i class='fas fa-pencil-alt'></i>");

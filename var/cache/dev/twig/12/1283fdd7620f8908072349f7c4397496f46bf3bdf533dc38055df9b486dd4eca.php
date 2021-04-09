@@ -134,12 +134,33 @@ class __TwigTemplate_1e43516577e2db12c4f1736eb3076905c16214a289876d46f8b882db5bd
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 28
+        echo "                ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "session", [], "any", false, false, false, 28), "flashbag", [], "any", false, false, false, 28), "get", [0 => "content_already"], "method", false, false, false, 28));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 29
+            echo "
+                    <div class=\"alert alert-danger\">
+                        <p class=\"text-center h5\">
+                            ";
+            // line 32
+            echo $context["flashMessage"];
+            echo "
+                        </p>
+                    </div>
+
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 37
         echo "            </div>
         </div>
         <div class=\"row mt-5\">
             <div class=\"col-md-2 offset-md-10 d-grid gap-2\">
                 <a href=\"";
-        // line 32
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_create");
         echo "\" class=\"btn btn-warning\">Ekle <i class=\"fas fa-plus\"></i></a>
             </div>
@@ -159,32 +180,32 @@ class __TwigTemplate_1e43516577e2db12c4f1736eb3076905c16214a289876d46f8b882db5bd
                     </thead>
                     <tbody>
                     ";
-        // line 49
+        // line 58
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["contents"]) || array_key_exists("contents", $context) ? $context["contents"] : (function () { throw new RuntimeError('Variable "contents" does not exist.', 49, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["contents"]) || array_key_exists("contents", $context) ? $context["contents"] : (function () { throw new RuntimeError('Variable "contents" does not exist.', 58, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["content"]) {
-            // line 50
+            // line 59
             echo "                        <tr>
                             <td>#</td>
                             <td>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["content"], "isim", [], "any", false, false, false, 52), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["content"], "isim", [], "any", false, false, false, 61), "html", null, true);
             echo "</td>
                             <td>";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["content"], "bolge", [], "any", false, false, false, 53), "isim", [], "any", false, false, false, 53), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["content"], "bolge", [], "any", false, false, false, 62), "isim", [], "any", false, false, false, 62), "html", null, true);
             echo "</td>
                             <td>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["content"], "hizmet", [], "any", false, false, false, 54), "isim", [], "any", false, false, false, 54), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["content"], "hizmet", [], "any", false, false, false, 63), "isim", [], "any", false, false, false, 63), "html", null, true);
             echo "</td>
                             <td><a href=\"";
-            // line 55
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_update", ["id" => twig_get_attribute($this->env, $this->source, $context["content"], "id", [], "any", false, false, false, 55)]), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_update", ["id" => twig_get_attribute($this->env, $this->source, $context["content"], "id", [], "any", false, false, false, 64)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary\">Düzenle <i class=\"fas fa-pencil-alt\"></i></a></td>
                             <td><a href=\"";
-            // line 56
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["content"], "id", [], "any", false, false, false, 56)]), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["content"], "id", [], "any", false, false, false, 65)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-danger\">Sil <i class=\"fas fa-trash\"></i></a></td>
                         </tr>
                     ";
@@ -192,7 +213,7 @@ class __TwigTemplate_1e43516577e2db12c4f1736eb3076905c16214a289876d46f8b882db5bd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['content'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 68
         echo "                    </tbody>
                 </table>
             </div>
@@ -219,7 +240,7 @@ class __TwigTemplate_1e43516577e2db12c4f1736eb3076905c16214a289876d46f8b882db5bd
 
     public function getDebugInfo()
     {
-        return array (  196 => 59,  187 => 56,  183 => 55,  179 => 54,  175 => 53,  171 => 52,  167 => 50,  163 => 49,  143 => 32,  137 => 28,  126 => 23,  121 => 20,  116 => 19,  105 => 14,  100 => 11,  96 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  217 => 68,  208 => 65,  204 => 64,  200 => 63,  196 => 62,  192 => 61,  188 => 59,  184 => 58,  164 => 41,  158 => 37,  147 => 32,  142 => 29,  137 => 28,  126 => 23,  121 => 20,  116 => 19,  105 => 14,  100 => 11,  96 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -245,6 +266,15 @@ class __TwigTemplate_1e43516577e2db12c4f1736eb3076905c16214a289876d46f8b882db5bd
                 {% for flashMessage in app.session.flashbag.get('content_updated') %}
 
                     <div class=\"alert alert-success\">
+                        <p class=\"text-center h5\">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('content_already') %}
+
+                    <div class=\"alert alert-danger\">
                         <p class=\"text-center h5\">
                             {{ flashMessage | raw }}
                         </p>
