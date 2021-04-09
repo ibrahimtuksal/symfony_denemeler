@@ -25,12 +25,13 @@
                                     <a href="{{ banner.path }}" class="btn btn-purple mb-3">İçeriğe Git <i class="fas fa-arrow-right"></i></a>
                                 {% endif %}
                                 <div class="d-grid gap-2">
-                                    <a href="" class="btn btn-success mb-3">Hemen Tıkla Ara <i class="fas fa-phone"></i></a>
+                                    {% for item in numberSolo %}
+                                        <a href="tel:+90{{ item.number }}" class="btn btn-success mb-3">{{ item.butonName }} <i class="fas fa-phone"></i></a>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
-
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

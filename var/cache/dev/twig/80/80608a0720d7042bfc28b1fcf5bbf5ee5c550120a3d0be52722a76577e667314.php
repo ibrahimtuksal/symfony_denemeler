@@ -109,8 +109,24 @@ class __TwigTemplate_64a513c81760a107b06017348a32526048b1b93788556fe38ba7e625965
                 <p class=\"h3\">İletişim</p>
                 <hr>
                 <div class=\"d-grid gap-2 my-3\">
-                    <a href=\"\" class=\"btn btn-purple\">Tıkla Ara <i class=\"fas fa-phone\"></i></a>
-                </div>
+                    ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["numberSoloList"]) || array_key_exists("numberSoloList", $context) ? $context["numberSoloList"] : (function () { throw new RuntimeError('Variable "numberSoloList" does not exist.', 32, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 33
+            echo "                        <a href=\"tel:+90";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "number", [], "any", false, false, false, 33), "html", null, true);
+            echo "\" class=\"btn btn-purple\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "butonName", [], "any", false, false, false, 33), "html", null, true);
+            echo " <i class=\"fas fa-phone\"></i></a>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 35
+        echo "                </div>
                 <div class=\"d-grid gap-2 my-3\">
                     <a href=\"\" class=\"btn btn-success\">Whatsapp İletişim <i class=\"fab fa-whatsapp\"></i></a>
                 </div>
@@ -118,8 +134,8 @@ class __TwigTemplate_64a513c81760a107b06017348a32526048b1b93788556fe38ba7e625965
         </div>
     </div>
     ";
-        // line 40
-        $this->loadTemplate("home/inc/footer.html.twig", "pages/bolge.html.twig", 40)->display($context);
+        // line 42
+        $this->loadTemplate("home/inc/footer.html.twig", "pages/bolge.html.twig", 42)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -140,7 +156,7 @@ class __TwigTemplate_64a513c81760a107b06017348a32526048b1b93788556fe38ba7e625965
 
     public function getDebugInfo()
     {
-        return array (  122 => 40,  106 => 26,  95 => 21,  90 => 18,  86 => 17,  78 => 12,  71 => 7,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  138 => 42,  129 => 35,  118 => 33,  114 => 32,  106 => 26,  95 => 21,  90 => 18,  86 => 17,  78 => 12,  71 => 7,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -176,7 +192,9 @@ class __TwigTemplate_64a513c81760a107b06017348a32526048b1b93788556fe38ba7e625965
                 <p class=\"h3\">İletişim</p>
                 <hr>
                 <div class=\"d-grid gap-2 my-3\">
-                    <a href=\"\" class=\"btn btn-purple\">Tıkla Ara <i class=\"fas fa-phone\"></i></a>
+                    {% for item in numberSoloList %}
+                        <a href=\"tel:+90{{ item.number }}\" class=\"btn btn-purple\">{{ item.butonName }} <i class=\"fas fa-phone\"></i></a>
+                    {% endfor %}
                 </div>
                 <div class=\"d-grid gap-2 my-3\">
                     <a href=\"\" class=\"btn btn-success\">Whatsapp İletişim <i class=\"fab fa-whatsapp\"></i></a>

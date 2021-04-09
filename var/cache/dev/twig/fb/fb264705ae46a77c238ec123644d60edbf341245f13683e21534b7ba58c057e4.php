@@ -65,7 +65,7 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
         <meta name=\"robots\" content=\"index, follow\">
         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf8\">
         <meta name=\"language\" content=\"Turkish\">
-        <meta name=\"revisit-after\" content=\"3 days\">
+        <meta name=\"revisit-after\" content=\"1 days\">
         <meta name=\"author\" content=\"İbrahim TUKSAL\">
         <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
@@ -275,7 +275,7 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
         <meta name=\"robots\" content=\"index, follow\">
         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf8\">
         <meta name=\"language\" content=\"Turkish\">
-        <meta name=\"revisit-after\" content=\"3 days\">
+        <meta name=\"revisit-after\" content=\"1 days\">
         <meta name=\"author\" content=\"İbrahim TUKSAL\">
         <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">

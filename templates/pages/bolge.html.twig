@@ -29,7 +29,9 @@
                 <p class="h3">İletişim</p>
                 <hr>
                 <div class="d-grid gap-2 my-3">
-                    <a href="" class="btn btn-purple">Tıkla Ara <i class="fas fa-phone"></i></a>
+                    {% for item in numberSoloList %}
+                        <a href="tel:+90{{ item.number }}" class="btn btn-purple">{{ item.butonName }} <i class="fas fa-phone"></i></a>
+                    {% endfor %}
                 </div>
                 <div class="d-grid gap-2 my-3">
                     <a href="" class="btn btn-success">Whatsapp İletişim <i class="fab fa-whatsapp"></i></a>

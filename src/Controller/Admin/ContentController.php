@@ -166,7 +166,7 @@ class ContentController extends AbstractController
                 ->setCreatedAt( new \DateTime())
             ;
              $em->flush();
-            $this->addFlash('content_updated',"İçerik Başarıyla Güncellendi <i class='fas fa-pencil-alt'></i>");
+             $this->addFlash('content_updated',"İçerik Başarıyla Güncellendi <i class='fas fa-pencil-alt'></i>");
              return $this->redirectToRoute('content_home');
         }
         return $this->render('admin/content/update.html.twig', [

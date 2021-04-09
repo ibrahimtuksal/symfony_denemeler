@@ -9,6 +9,7 @@ use App\Entity\Content;
 use App\Entity\General;
 use App\Entity\GeneralInformation;
 use App\Entity\Hizmetler;
+use App\Entity\Number;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,8 +31,12 @@ class HomeController extends AbstractController
 
         $content = $em->getRepository(Content::class)->findBy([],['id' => 'asc'], 6);
 
+
+        $numberSoloList = $em->getRepository(Number::class)->findBy(['is_active' => true],['desk' => 'asc'],1);
+
         return $this->render('home/index.html.twig', [
             'banners' => $banner,
+            'numberSolo' => $numberSoloList,
             'generals' => $generalInformation,
             'hizmetler' => $hizmetler,
             'contents' => $content,
@@ -51,7 +56,7 @@ class HomeController extends AbstractController
             'hizmetlerHeader' => $hizmetler,
             'about' => $about,
             'bolgelerHeader' => $bolgeler,
-            'generals'=> $general
+            'generals' => $general
         ]);
     }
 

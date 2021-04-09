@@ -24,6 +24,11 @@ class NumberFormType extends AbstractType
                 'attr' => ['class' => 'form-control'],
                 'row_attr' => ['class' => 'my-3']
             ])
+            ->add('desk', TextType::class, [
+                'label' => 'Gösterim Sırası (1. olan Banner da ve sayfalarda Görünür)',
+                'attr' => ['class' => 'form-control'],
+                'row_attr' => ['class' => 'my-3']
+            ])
             ->add('submit', SubmitType::class, [
                 'row_attr' => ['class' => 'd-grid gap-2 my-3'],
                 'attr' => ['class' => 'btn btn-success'],

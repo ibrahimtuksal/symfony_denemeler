@@ -30,7 +30,12 @@ class Number
     /**
      * @ORM\Column(type="boolean")
      */
-    private $is_active = true;
+    private $is_active;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $desk;
 
     public function getId(): ?int
     {
@@ -69,6 +74,18 @@ class Number
     public function setIsActive(?bool $is_active): self
     {
         $this->is_active = $is_active;
+
+        return $this;
+    }
+
+    public function getDesk(): ?int
+    {
+        return $this->desk;
+    }
+
+    public function setDesk(int $desk): self
+    {
+        $this->desk = $desk;
 
         return $this;
     }
