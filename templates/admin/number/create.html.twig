@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Yönetim Paneli{% endblock %}
+
+{% block body %}
+    {% include 'admin/inc/header.html.twig' %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                {% for flashMessage in app.session.flashbag.get('number_create') %}
+
+                    <div class="alert alert-success">
+                        <p class="text-center h5">
+                            {{ flashMessage | raw }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-5">
+                <p class="text-center display-6">
+                    Numara Ekle
+                </p>
+                {{ form(numberform) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

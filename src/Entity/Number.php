@@ -30,7 +30,7 @@ class Number
     /**
      * @ORM\Column(type="boolean")
      */
-    private $is_active;
+    private $is_active = true;
 
     public function getId(): ?int
     {
@@ -66,7 +66,7 @@ class Number
         return $this->is_active;
     }
 
-    public function setIsActive(bool $is_active): self
+    public function setIsActive(?bool $is_active): self
     {
         $this->is_active = $is_active;
 

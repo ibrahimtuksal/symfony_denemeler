@@ -394,6 +394,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\Admin\MahalleController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\NumberController" class="App\Controller\Admin\NumberController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\Admin\NumberController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\SSSController" class="App\Controller\Admin\SSSController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -459,6 +466,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\HizmetlerFormType" class="App\Form\HizmetlerFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\NumberChangeFormType" class="App\Form\NumberChangeFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\NumberFormType" class="App\Form\NumberFormType" autowire="true" autoconfigure="true">
@@ -998,6 +1008,7 @@
         <argument>App\Form\GeneralInformationFormType</argument>
         <argument>App\Form\HizmetlerChangeFormType</argument>
         <argument>App\Form\HizmetlerFormType</argument>
+        <argument>App\Form\NumberChangeFormType</argument>
         <argument>App\Form\NumberFormType</argument>
         <argument>App\Form\SSSChangeFormType</argument>
         <argument>App\Form\SSSFormType</argument>
@@ -1359,7 +1370,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.PYuRRwH"/>
+      <argument type="service" id=".service_locator.UktRVEv"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5490,6 +5501,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\MahalleController" class="App\Controller\Admin\MahalleController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\MahalleController" class="App\Controller\Admin\MahalleController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\MahalleController" class="App\Controller\Admin\MahalleController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\NumberController" class="App\Controller\Admin\NumberController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\NumberController" class="App\Controller\Admin\NumberController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\NumberController" class="App\Controller\Admin\NumberController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\SSSController" class="App\Controller\Admin\SSSController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\SSSController" class="App\Controller\Admin\SSSController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\SSSController" class="App\Controller\Admin\SSSController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5526,6 +5540,8 @@
     <service id=".abstract.instanceof.App\Form\HizmetlerChangeFormType" class="App\Form\HizmetlerChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HizmetlerFormType" class="App\Form\HizmetlerFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HizmetlerFormType" class="App\Form\HizmetlerFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NumberChangeFormType" class="App\Form\NumberChangeFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\NumberChangeFormType" class="App\Form\NumberChangeFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NumberFormType" class="App\Form\NumberFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\NumberFormType" class="App\Form\NumberFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SSSChangeFormType" class="App\Form\SSSChangeFormType" autowire="true" abstract="true"/>
@@ -5965,7 +5981,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.PYuRRwH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.UktRVEv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AboutChangeFormType" type="service" id="App\Form\AboutChangeFormType"/>
@@ -5979,6 +5995,7 @@
         <argument key="App\Form\GeneralInformationFormType" type="service" id="App\Form\GeneralInformationFormType"/>
         <argument key="App\Form\HizmetlerChangeFormType" type="service" id="App\Form\HizmetlerChangeFormType"/>
         <argument key="App\Form\HizmetlerFormType" type="service" id="App\Form\HizmetlerFormType"/>
+        <argument key="App\Form\NumberChangeFormType" type="service" id="App\Form\NumberChangeFormType"/>
         <argument key="App\Form\NumberFormType" type="service" id="App\Form\NumberFormType"/>
         <argument key="App\Form\SSSChangeFormType" type="service" id="App\Form\SSSChangeFormType"/>
         <argument key="App\Form\SSSFormType" type="service" id="App\Form\SSSFormType"/>
@@ -6273,6 +6290,12 @@
     <service id=".service_locator.5nX7ca3.App\Controller\Admin\MahalleController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\MahalleController"/>
       <argument>App\Controller\Admin\MahalleController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\Admin\NumberController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\NumberController"/>
+      <argument>App\Controller\Admin\NumberController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>

@@ -66,10 +66,10 @@ class Bolgeler extends \App\Entity\Bolgeler implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'mahalles', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'contents'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'mahalles', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'contents', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'slug'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'mahalles', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'contents'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'mahalles', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'contents', '' . "\0" . 'App\\Entity\\Bolgeler' . "\0" . 'slug'];
     }
 
     /**
@@ -277,6 +277,28 @@ class Bolgeler extends \App\Entity\Bolgeler implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeContent', [$content]);
 
         return parent::removeContent($content);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSlug(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSlug', []);
+
+        return parent::getSlug();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSlug(string $slug): \App\Entity\Bolgeler
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSlug', [$slug]);
+
+        return parent::setSlug($slug);
     }
 
 }

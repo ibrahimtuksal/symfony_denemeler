@@ -28,6 +28,8 @@ return [
         '/admin/hizmet' => [[['_route' => 'hizmet_home', '_controller' => 'App\\Controller\\Admin\\HizmetController::index'], null, null, null, false, false, null]],
         '/admin/hizmet/create' => [[['_route' => 'hizmet_create', '_controller' => 'App\\Controller\\Admin\\HizmetController::hizmetAdd'], null, null, null, false, false, null]],
         '/admin/mahalle' => [[['_route' => 'mahalle_home', '_controller' => 'App\\Controller\\Admin\\MahalleController::index'], null, null, null, false, false, null]],
+        '/admin/number' => [[['_route' => 'number_home', '_controller' => 'App\\Controller\\Admin\\NumberController::index'], null, null, null, false, false, null]],
+        '/admin/number/create' => [[['_route' => 'number_create', '_controller' => 'App\\Controller\\Admin\\NumberController::create'], null, null, null, false, false, null]],
         '/admin/sss' => [[['_route' => 'sss_home', '_controller' => 'App\\Controller\\Admin\\SSSController::index'], null, null, null, false, false, null]],
         '/admin/sss/create' => [[['_route' => 'sss_create', '_controller' => 'App\\Controller\\Admin\\SSSController::create'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
@@ -73,15 +75,20 @@ return [
                                 .'|update/([^/]++)(*:444)'
                                 .'|delete/([^/]++)(*:467)'
                             .')'
-                            .'|sss/delete/([^/]++)(*:495)'
+                            .'|number/(?'
+                                .'|update/([^/]++)(*:501)'
+                                .'|delete/([^/]++)(*:524)'
+                                .'|operation/([^/]++)(*:550)'
+                            .')'
+                            .'|sss/delete/([^/]++)(*:578)'
                         .')'
-                        .'|m/sss/update/([^/]++)(*:525)'
+                        .'|m/sss/update/([^/]++)(*:608)'
                     .')'
-                    .'|bout/([^/]++)(*:547)'
+                    .'|bout/([^/]++)(*:630)'
                 .')'
-                .'|/hizmet/([^/]++)(*:572)'
-                .'|/content/([^/]++)(*:597)'
-                .'|/bolge/([^/]++)(*:620)'
+                .'|/hizmet/([^/]++)(*:655)'
+                .'|/content/([^/]++)(*:680)'
+                .'|/bolge/([^/]++)(*:703)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -102,12 +109,15 @@ return [
         410 => [[['_route' => 'generali_remove', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::remove'], ['id'], null, null, false, true, null]],
         444 => [[['_route' => 'hizmet_update', '_controller' => 'App\\Controller\\Admin\\HizmetController::update'], ['id'], null, null, false, true, null]],
         467 => [[['_route' => 'hizmet_delete', '_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], ['id'], null, null, false, true, null]],
-        495 => [[['_route' => 'sss_delete', '_controller' => 'App\\Controller\\Admin\\SSSController::delete'], ['id'], null, null, false, true, null]],
-        525 => [[['_route' => 'sss_update', '_controller' => 'App\\Controller\\Admin\\SSSController::update'], ['id'], null, null, false, true, null]],
-        547 => [[['_route' => 'about_page', '_controller' => 'App\\Controller\\PagesController::about'], ['slug'], null, null, false, true, null]],
-        572 => [[['_route' => 'hizmet_page', '_controller' => 'App\\Controller\\PagesController::hizmet'], ['slug'], null, null, false, true, null]],
-        597 => [[['_route' => 'content_page', '_controller' => 'App\\Controller\\PagesController::content'], ['slug'], null, null, false, true, null]],
-        620 => [
+        501 => [[['_route' => 'number_update', '_controller' => 'App\\Controller\\Admin\\NumberController::update'], ['id'], null, null, false, true, null]],
+        524 => [[['_route' => 'number_delete', '_controller' => 'App\\Controller\\Admin\\NumberController::delete'], ['id'], null, null, false, true, null]],
+        550 => [[['_route' => 'number_operation', '_controller' => 'App\\Controller\\Admin\\NumberController::operation'], ['id'], null, null, false, true, null]],
+        578 => [[['_route' => 'sss_delete', '_controller' => 'App\\Controller\\Admin\\SSSController::delete'], ['id'], null, null, false, true, null]],
+        608 => [[['_route' => 'sss_update', '_controller' => 'App\\Controller\\Admin\\SSSController::update'], ['id'], null, null, false, true, null]],
+        630 => [[['_route' => 'about_page', '_controller' => 'App\\Controller\\PagesController::about'], ['slug'], null, null, false, true, null]],
+        655 => [[['_route' => 'hizmet_page', '_controller' => 'App\\Controller\\PagesController::hizmet'], ['slug'], null, null, false, true, null]],
+        680 => [[['_route' => 'content_page', '_controller' => 'App\\Controller\\PagesController::content'], ['slug'], null, null, false, true, null]],
+        703 => [
             [['_route' => 'bolgeler_page', '_controller' => 'App\\Controller\\PagesController::bolge'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
