@@ -29,7 +29,7 @@ background-color: #F3F3F3;
 }
 .tksl-radius
 {
-    border-radius: 35px;
+    border-radius: 15px;
 }
 .menu{
     font-size: 22px;
@@ -127,8 +127,8 @@ background-color: #F3F3F3;
 .hizmet-img
 {
     object-fit: cover;
-    width: 420px;
-    height: 320px;
+    width: 720px;
+    height: 420px;
 }
 .admin-img
 {

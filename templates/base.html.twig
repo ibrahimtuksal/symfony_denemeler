@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <script src="/assets/js/bootstrap.bundle.js"></script>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/owl.carousel.min.js"></script>
 
         {% block stylesheets %}
         {% endblock %}
@@ -28,6 +30,30 @@
     <body>
         {% block body %}{% endblock %}
 
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:1500,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1200:{
+                        items:3
+                    },
+                    1500:{
+                        items:3
+                    }
+                }
+            })
+        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
         <script src="/assets/js/bootstrap.js"></script>

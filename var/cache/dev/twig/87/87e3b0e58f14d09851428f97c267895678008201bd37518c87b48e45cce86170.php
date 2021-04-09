@@ -69,26 +69,54 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         <meta name=\"author\" content=\"İbrahim TUKSAL\">
         <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.carousel.min.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.theme.default.min.css\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\"
               integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
         <script src=\"/assets/js/bootstrap.bundle.js\"></script>
+        <script src=\"/assets/js/jquery.min.js\"></script>
+        <script src=\"/assets/js/owl.carousel.min.js\"></script>
 
         ";
-        // line 19
+        // line 23
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 21
+        // line 25
         echo "
         ";
-        // line 22
+        // line 26
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
+        // line 29
         echo "    </head>
     <body>
         ";
-        // line 27
+        // line 31
         $this->displayBlock('body', $context, $blocks);
-        // line 28
+        // line 32
         echo "
+        <script>
+            \$('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:1500,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1200:{
+                        items:3
+                    },
+                    1500:{
+                        items:3
+                    }
+                }
+            })
+        </script>
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
         <script src=\"/assets/js/bootstrap.js\"></script>
@@ -166,7 +194,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 19
+    // line 23
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,7 +204,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 20
+        // line 24
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -186,7 +214,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 22
+    // line 26
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -196,7 +224,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 23
+        // line 27
         echo "
         ";
         
@@ -207,7 +235,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     }
 
-    // line 27
+    // line 31
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -232,7 +260,7 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
 
     public function getDebugInfo()
     {
-        return array (  211 => 27,  200 => 23,  190 => 22,  180 => 20,  170 => 19,  152 => 7,  134 => 6,  115 => 5,  91 => 28,  89 => 27,  85 => 25,  83 => 22,  80 => 21,  78 => 19,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  239 => 31,  228 => 27,  218 => 26,  208 => 24,  198 => 23,  180 => 7,  162 => 6,  143 => 5,  95 => 32,  93 => 31,  89 => 29,  87 => 26,  84 => 25,  82 => 23,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -251,9 +279,13 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
         <meta name=\"author\" content=\"İbrahim TUKSAL\">
         <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.carousel.min.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.theme.default.min.css\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\"
               integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
         <script src=\"/assets/js/bootstrap.bundle.js\"></script>
+        <script src=\"/assets/js/jquery.min.js\"></script>
+        <script src=\"/assets/js/owl.carousel.min.js\"></script>
 
         {% block stylesheets %}
         {% endblock %}
@@ -265,6 +297,30 @@ class __TwigTemplate_873c8b35051cbde564645e1493b0b9129cd0a0b298f564ff8c264e6d280
     <body>
         {% block body %}{% endblock %}
 
+        <script>
+            \$('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:1500,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1200:{
+                        items:3
+                    },
+                    1500:{
+                        items:3
+                    }
+                }
+            })
+        </script>
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
         <script src=\"/assets/js/bootstrap.js\"></script>
