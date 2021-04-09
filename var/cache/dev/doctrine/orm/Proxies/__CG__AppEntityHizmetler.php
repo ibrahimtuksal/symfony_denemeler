@@ -66,10 +66,10 @@ class Hizmetler extends \App\Entity\Hizmetler implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'keyword', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'contents'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'keyword', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'contents', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'text'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'keyword', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'contents'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'isim', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'keyword', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'contents', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Hizmetler' . "\0" . 'text'];
     }
 
     /**
@@ -310,6 +310,50 @@ class Hizmetler extends \App\Entity\Hizmetler implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeContent', [$content]);
 
         return parent::removeContent($content);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPhoto(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPhoto', []);
+
+        return parent::getPhoto();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPhoto(string $photo): \App\Entity\Hizmetler
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPhoto', [$photo]);
+
+        return parent::setPhoto($photo);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getText(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getText', []);
+
+        return parent::getText();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setText(string $text): \App\Entity\Hizmetler
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setText', [$text]);
+
+        return parent::setText($text);
     }
 
 }
