@@ -1497,3 +1497,7 @@ e25daf,::1,GET,http://localhost:4000/admin/number,1617977292,,200
 4a2af3,::1,GET,http://localhost:4000/admin/number/operation/2,1617977296,,302
 c874c4,::1,GET,http://localhost:4000/admin/number,1617977296,,200
 ac789a,::1,GET,http://localhost:4000/admin/number,1617977298,,200
+17b575,::1,GET,http://localhost:4000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CHomeController%253Aheader,1617977423,572880,200
+572880,::1,GET,http://localhost:4000/,1617977423,,200
+a3af4e,::1,GET,http://localhost:4000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CHomeController%253Aheader,1617977615,5bd6f7,200
+5bd6f7,::1,GET,http://localhost:4000/hizmet/farkli-bir-syler,1617977615,,200
