@@ -22,6 +22,7 @@ return [
         '/admin/bolgeler/create' => [[['_route' => 'bolgeler_create', '_controller' => 'App\\Controller\\Admin\\BolgelerController::create'], null, null, null, false, false, null]],
         '/admin/content' => [[['_route' => 'content_home', '_controller' => 'App\\Controller\\Admin\\ContentController::index'], null, null, null, false, false, null]],
         '/admin/content/create' => [[['_route' => 'content_create', '_controller' => 'App\\Controller\\Admin\\ContentController::create'], null, null, null, false, false, null]],
+        '/admin/general' => [[['_route' => 'general_home', '_controller' => 'App\\Controller\\Admin\\GeneralController::index'], null, null, null, false, false, null]],
         '/admin/generalinformation' => [[['_route' => 'generali_home', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::index'], null, null, null, false, false, null]],
         '/admin/generalinformation/create' => [[['_route' => 'generali_create', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::create'], null, null, null, false, false, null]],
         '/admin/generalinformation/info' => [[['_route' => 'generali_info', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::info'], null, null, null, false, false, null]],

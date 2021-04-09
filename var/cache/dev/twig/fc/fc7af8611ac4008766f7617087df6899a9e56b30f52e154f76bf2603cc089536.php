@@ -70,18 +70,22 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
                 <ul class=\"dropdown-menu text-center\" aria-labelledby=\"dropdownMenuButton1\">
                     <li><a class=\"dropdown-item\" href=\"";
         // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("general_home");
+        echo "\">Genel Ayarlar <i class=\"fas fa-cog\"></i></a></li>
+                    <li><a class=\"dropdown-item\" href=\"";
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("banner_home");
         echo "\">Banner Ayarları <i class=\"fas fa-images\"></i></a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 21
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("generali_home");
         echo "\">Genel Bilgi Ayarları <i class=\"fas fa-cog\"></i></a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 22
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_home");
         echo "\">Biz Kimiz Ayarları <i class=\"fas fa-cog\"></i></a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 23
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("number_home");
         echo "\">Numara Ayarlar <i class=\"fas fa-phone\"></i></a></li>
                 </ul>
@@ -89,31 +93,31 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 28
+        // line 29
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hizmet_home");
         echo "\" class=\"btn btn-dark\">Hizmetler <i class=\"fas fa-bars\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 31
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sss_home");
         echo "\" class=\"btn btn-dark\">S.S.S <i class=\"fas fa-question\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 34
+        // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bolgeler_home");
         echo "\" class=\"btn btn-dark\">Semt <i class=\"fas fa-city\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 37
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mahalle_home");
         echo "\" class=\"btn btn-dark\">Mahalle <i class=\"fas fa-city\"></i></a>
         </div>
         <div class=\"col-md-2 d-grid gap-2 mb-3\">
             <a href=\"";
-        // line 40
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_home");
         echo "\" class=\"btn btn-dark\">İçerik <i class=\"fas fa-qrcode\"></i></a>
         </div>
@@ -139,7 +143,7 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
 
     public function getDebugInfo()
     {
-        return array (  117 => 40,  111 => 37,  105 => 34,  99 => 31,  93 => 28,  85 => 23,  81 => 22,  77 => 21,  73 => 20,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
+        return array (  121 => 41,  115 => 38,  109 => 35,  103 => 32,  97 => 29,  89 => 24,  85 => 23,  81 => 22,  77 => 21,  73 => 20,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -163,6 +167,7 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
                     <i class=\"fas fa-cog\"></i> Genel Ayarlar
                 </button>
                 <ul class=\"dropdown-menu text-center\" aria-labelledby=\"dropdownMenuButton1\">
+                    <li><a class=\"dropdown-item\" href=\"{{ path('general_home') }}\">Genel Ayarlar <i class=\"fas fa-cog\"></i></a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path('banner_home') }}\">Banner Ayarları <i class=\"fas fa-images\"></i></a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path('generali_home') }}\">Genel Bilgi Ayarları <i class=\"fas fa-cog\"></i></a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path('about_home') }}\">Biz Kimiz Ayarları <i class=\"fas fa-cog\"></i></a></li>

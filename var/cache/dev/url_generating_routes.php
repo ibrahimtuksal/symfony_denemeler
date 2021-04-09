@@ -30,6 +30,7 @@ return [
     'content_create' => [[], ['_controller' => 'App\\Controller\\Admin\\ContentController::create'], [], [['text', '/admin/content/create']], [], []],
     'content_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ContentController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/content/update']], [], []],
     'content_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ContentController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/content/delete']], [], []],
+    'general_home' => [[], ['_controller' => 'App\\Controller\\Admin\\GeneralController::index'], [], [['text', '/admin/general']], [], []],
     'generali_home' => [[], ['_controller' => 'App\\Controller\\Admin\\GeneralInformationController::index'], [], [['text', '/admin/generalinformation']], [], []],
     'generali_create' => [[], ['_controller' => 'App\\Controller\\Admin\\GeneralInformationController::create'], [], [['text', '/admin/generalinformation/create']], [], []],
     'generali_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\GeneralInformationController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/generalinformation/update']], [], []],

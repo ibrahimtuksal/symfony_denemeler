@@ -373,6 +373,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\Admin\ContentController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\GeneralController" class="App\Controller\Admin\GeneralController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\Admin\GeneralController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5500,6 +5507,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ContentController" class="App\Controller\Admin\ContentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ContentController" class="App\Controller\Admin\ContentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ContentController" class="App\Controller\Admin\ContentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\GeneralController" class="App\Controller\Admin\GeneralController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\GeneralController" class="App\Controller\Admin\GeneralController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\GeneralController" class="App\Controller\Admin\GeneralController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\GeneralInformationController" class="App\Controller\Admin\GeneralInformationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6286,6 +6296,12 @@
     <service id=".service_locator.5nX7ca3.App\Controller\Admin\ContentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ContentController"/>
       <argument>App\Controller\Admin\ContentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\Admin\GeneralController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\GeneralController"/>
+      <argument>App\Controller\Admin\GeneralController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>

@@ -6,6 +6,7 @@ use App\Entity\About;
 use App\Entity\Banner;
 use App\Entity\Bolgeler;
 use App\Entity\Content;
+use App\Entity\General;
 use App\Entity\GeneralInformation;
 use App\Entity\Hizmetler;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,11 +45,13 @@ class HomeController extends AbstractController
         $hizmetler = $em->getRepository(Hizmetler::class)->findAll();
         $about = $em->getRepository(About::class)->findAll();
         $bolgeler = $em->getRepository(Bolgeler::class)->findAll();
+        $general = $em->getRepository(General::class)->find(1);
 
         return $this->render('home/inc/header.html.twig',[
             'hizmetlerHeader' => $hizmetler,
             'about' => $about,
-            'bolgelerHeader' => $bolgeler
+            'bolgelerHeader' => $bolgeler,
+            'generals'=> $general
         ]);
     }
 
