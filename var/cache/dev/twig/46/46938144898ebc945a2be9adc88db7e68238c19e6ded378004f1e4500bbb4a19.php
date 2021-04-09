@@ -94,7 +94,7 @@ class __TwigTemplate_5449f0af769aae0539d21c83d33e9be908f3e3d127d0e38ffa148f8c22c
             <div class=\"col-md-2 offset-md-10 d-grid gap-2\">
                 <a href=\"";
         // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hizmet_create");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("banner_create");
         echo "\" class=\"btn btn-warning\">Ekle <i class=\"fas fa-plus\"></i></a>
             </div>
         </div>
@@ -181,7 +181,7 @@ class __TwigTemplate_5449f0af769aae0539d21c83d33e9be908f3e3d127d0e38ffa148f8c22c
 
         <div class=\"row mt-5\">
             <div class=\"col-md-2 offset-md-10 d-grid gap-2\">
-                <a href=\"{{ path('hizmet_create') }}\" class=\"btn btn-warning\">Ekle <i class=\"fas fa-plus\"></i></a>
+                <a href=\"{{ path('banner_create') }}\" class=\"btn btn-warning\">Ekle <i class=\"fas fa-plus\"></i></a>
             </div>
         </div>
         <div class=\"row justify-content-md-center\">

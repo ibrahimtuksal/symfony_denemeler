@@ -116,7 +116,7 @@ class __TwigTemplate_1843dfe0e2c2a83c81fd0f1f8f025d8a0c471b279308962f8e9d9f6fe60
         echo "            </div>
         </div>
         <div class=\"row justify-content-md-center\">
-            <div class=\"col-md-5\">
+            <div class=\"col-md-10\">
             ";
         // line 23
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["updateform"]) || array_key_exists("updateform", $context) ? $context["updateform"] : (function () { throw new RuntimeError('Variable "updateform" does not exist.', 23, $this->source); })()), 'form');
@@ -171,7 +171,7 @@ class __TwigTemplate_1843dfe0e2c2a83c81fd0f1f8f025d8a0c471b279308962f8e9d9f6fe60
             </div>
         </div>
         <div class=\"row justify-content-md-center\">
-            <div class=\"col-md-5\">
+            <div class=\"col-md-10\">
             {{ form(updateform) | raw }}
             </div>
         </div>

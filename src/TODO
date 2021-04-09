@@ -1,9 +1,12 @@
 TODO hizmetler sayfası için kapak fotoğrafı ve ck editor bağlanacak.
 TODO hizmetler page içeriği
-içerik page içeriği
-hizmetteki içeriklerin içeriği
-bölgelerimiz page detay fix page sadece anahtar kelimelere veriler gelecek tesisatcii dan bakılacak
+TODO içerik page içeriği
+TODO hizmetteki içeriklerin içeriği
+bölgelerimiz page detay fix page sadece
+bolgeler için slug yazılımı
 numara crud
 genel ayarlar wp hattı
-slug kontrolü
+slug kontrolü bütün controller kontrol !
+sitenin meta tagları hepsi kontrol !
 admin paneli genel bir kontrol !
+controller da em düzeltmesi kod düzeni !

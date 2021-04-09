@@ -72,8 +72,14 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
         // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("banner_home");
         echo "\">Banner Ayarları <i class=\"fas fa-images\"></i></a></li>
-                    <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-                    <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+                    <li><a class=\"dropdown-item\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("generali_home");
+        echo "\">Genel Bilgi Ayarları <i class=\"fas fa-cog\"></i></a></li>
+                    <li><a class=\"dropdown-item\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_home");
+        echo "\">Biz Kimiz Ayarları<i class=\"fas fa-cog\"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -129,7 +135,7 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
 
     public function getDebugInfo()
     {
-        return array (  107 => 39,  101 => 36,  95 => 33,  89 => 30,  83 => 27,  73 => 20,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
+        return array (  113 => 39,  107 => 36,  101 => 33,  95 => 30,  89 => 27,  81 => 22,  77 => 21,  73 => 20,  56 => 6,  52 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -154,8 +160,8 @@ class __TwigTemplate_61c2576f769b38512fdb89890bf418f8e3b3876a99f1caecfe763b835aa
                 </button>
                 <ul class=\"dropdown-menu text-center\" aria-labelledby=\"dropdownMenuButton1\">
                     <li><a class=\"dropdown-item\" href=\"{{ path('banner_home') }}\">Banner Ayarları <i class=\"fas fa-images\"></i></a></li>
-                    <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-                    <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path('generali_home') }}\">Genel Bilgi Ayarları <i class=\"fas fa-cog\"></i></a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path('about_home') }}\">Biz Kimiz Ayarları<i class=\"fas fa-cog\"></i></a></li>
                 </ul>
             </div>
         </div>

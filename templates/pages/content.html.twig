@@ -28,18 +28,20 @@
                 </p>
                 <br>
                 <div class="owl-carousel owl-theme mt-3">
-                    <div class="item mx-3">
-                        <img src="https://via.placeholder.com/400x250" class="content-i img-fluid" alt="">
-                        <p class="content-t mt-3">
-                            Başlık
-                        </p>
-                        <p class="content-c">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut blanditiis deserunt enim, et explicabo in magni natus neque nesciunt nobis odio officiis omnis pariatur repellat sequi tempore totam unde.
-                        </p>
-                        <div class="d-grid gap-2">
-                            <a href="" class="btn btn-purple">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    {% for content in contentNotIn %}
+                        <div class="item mx-3">
+                            <img src="/{{ content.photo }}" class="content-i img-fluid" alt="">
+                            <p class="content-t mt-3">
+                                {{ content.isim }}
+                            </p>
+                            <p class="content-c">
+                                {{ content.icerik|length > 320 ? content.icerik|slice(0,320)|raw : content.icerik|raw }}
+                            </p>
+                            <div class="d-grid gap-2">
+                                <a href="{{ path('content_page' ,{slug:content.slug}) }}" class="btn btn-purple">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

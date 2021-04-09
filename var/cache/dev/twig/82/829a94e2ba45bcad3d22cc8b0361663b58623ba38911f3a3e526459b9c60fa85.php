@@ -116,7 +116,7 @@ class __TwigTemplate_d433778ec7492d479707b040b3a1e9f22cb331ee1dfe6987b9082297062
         echo "            </div>
         </div>
         <div class=\"row justify-content-md-center\">
-            <div class=\"col-md-4\">
+            <div class=\"col-md-10\">
                 <p class=\"text-center display-6\">
                     Hizmet Ekle
                 </p>
@@ -174,7 +174,7 @@ class __TwigTemplate_d433778ec7492d479707b040b3a1e9f22cb331ee1dfe6987b9082297062
             </div>
         </div>
         <div class=\"row justify-content-md-center\">
-            <div class=\"col-md-4\">
+            <div class=\"col-md-10\">
                 <p class=\"text-center display-6\">
                     Hizmet Ekle
                 </p>

@@ -61,25 +61,27 @@ return [
                                 .'|remove/([^/]++)(*:262)'
                             .')'
                             .'|content/(?'
-                                .'|update/([^/]++)(*:297)'
-                                .'|delete/([^/]++)(*:320)'
+                                .'|slug/([^/]++)(*:295)'
+                                .'|update/([^/]++)(*:318)'
+                                .'|delete/([^/]++)(*:341)'
                             .')'
                             .'|generalinformation/(?'
-                                .'|update/([^/]++)(*:366)'
-                                .'|remove/([^/]++)(*:389)'
+                                .'|update/([^/]++)(*:387)'
+                                .'|remove/([^/]++)(*:410)'
                             .')'
                             .'|hizmet/(?'
-                                .'|update/([^/]++)(*:423)'
-                                .'|delete/([^/]++)(*:446)'
+                                .'|update/([^/]++)(*:444)'
+                                .'|delete/([^/]++)(*:467)'
                             .')'
-                            .'|sss/delete/([^/]++)(*:474)'
+                            .'|sss/delete/([^/]++)(*:495)'
                         .')'
-                        .'|m/sss/update/([^/]++)(*:504)'
+                        .'|m/sss/update/([^/]++)(*:525)'
                     .')'
-                    .'|bout/([^/]++)(*:526)'
+                    .'|bout/([^/]++)(*:547)'
                 .')'
-                .'|/hizmet/([^/]++)(*:551)'
-                .'|/content/([^/]++)(*:576)'
+                .'|/hizmet/([^/]++)(*:572)'
+                .'|/content/([^/]++)(*:597)'
+                .'|/bolge/([^/]++)(*:620)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -93,18 +95,20 @@ return [
         206 => [[['_route' => 'about_update', '_controller' => 'App\\Controller\\Admin\\AboutController::update'], ['id'], null, null, false, true, null]],
         239 => [[['_route' => 'banner_update', '_controller' => 'App\\Controller\\Admin\\BannerController::update'], ['id'], null, null, false, true, null]],
         262 => [[['_route' => 'banner_delete', '_controller' => 'App\\Controller\\Admin\\BannerController::delete'], ['id'], null, null, false, true, null]],
-        297 => [[['_route' => 'content_update', '_controller' => 'App\\Controller\\Admin\\ContentController::update'], ['id'], null, null, false, true, null]],
-        320 => [[['_route' => 'content_delete', '_controller' => 'App\\Controller\\Admin\\ContentController::delete'], ['id'], null, null, false, true, null]],
-        366 => [[['_route' => 'generali_update', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::update'], ['id'], null, null, false, true, null]],
-        389 => [[['_route' => 'generali_remove', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::remove'], ['id'], null, null, false, true, null]],
-        423 => [[['_route' => 'hizmet_update', '_controller' => 'App\\Controller\\Admin\\HizmetController::update'], ['id'], null, null, false, true, null]],
-        446 => [[['_route' => 'hizmet_delete', '_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], ['id'], null, null, false, true, null]],
-        474 => [[['_route' => 'sss_delete', '_controller' => 'App\\Controller\\Admin\\SSSController::delete'], ['id'], null, null, false, true, null]],
-        504 => [[['_route' => 'sss_update', '_controller' => 'App\\Controller\\Admin\\SSSController::update'], ['id'], null, null, false, true, null]],
-        526 => [[['_route' => 'about_page', '_controller' => 'App\\Controller\\PagesController::about'], ['slug'], null, null, false, true, null]],
-        551 => [[['_route' => 'hizmet_page', '_controller' => 'App\\Controller\\PagesController::hizmet'], ['slug'], null, null, false, true, null]],
-        576 => [
-            [['_route' => 'content_page', '_controller' => 'App\\Controller\\PagesController::content'], ['slug'], null, null, false, true, null],
+        295 => [[['_route' => 'content_slug', '_controller' => 'App\\Controller\\Admin\\BolgelerController::slug'], ['id'], null, null, false, true, null]],
+        318 => [[['_route' => 'content_update', '_controller' => 'App\\Controller\\Admin\\ContentController::update'], ['id'], null, null, false, true, null]],
+        341 => [[['_route' => 'content_delete', '_controller' => 'App\\Controller\\Admin\\ContentController::delete'], ['id'], null, null, false, true, null]],
+        387 => [[['_route' => 'generali_update', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::update'], ['id'], null, null, false, true, null]],
+        410 => [[['_route' => 'generali_remove', '_controller' => 'App\\Controller\\Admin\\GeneralInformationController::remove'], ['id'], null, null, false, true, null]],
+        444 => [[['_route' => 'hizmet_update', '_controller' => 'App\\Controller\\Admin\\HizmetController::update'], ['id'], null, null, false, true, null]],
+        467 => [[['_route' => 'hizmet_delete', '_controller' => 'App\\Controller\\Admin\\HizmetController::delete'], ['id'], null, null, false, true, null]],
+        495 => [[['_route' => 'sss_delete', '_controller' => 'App\\Controller\\Admin\\SSSController::delete'], ['id'], null, null, false, true, null]],
+        525 => [[['_route' => 'sss_update', '_controller' => 'App\\Controller\\Admin\\SSSController::update'], ['id'], null, null, false, true, null]],
+        547 => [[['_route' => 'about_page', '_controller' => 'App\\Controller\\PagesController::about'], ['slug'], null, null, false, true, null]],
+        572 => [[['_route' => 'hizmet_page', '_controller' => 'App\\Controller\\PagesController::hizmet'], ['slug'], null, null, false, true, null]],
+        597 => [[['_route' => 'content_page', '_controller' => 'App\\Controller\\PagesController::content'], ['slug'], null, null, false, true, null]],
+        620 => [
+            [['_route' => 'bolgeler_page', '_controller' => 'App\\Controller\\PagesController::bolge'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

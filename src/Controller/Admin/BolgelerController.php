@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Bolgeler;
+use App\Entity\Content;
 use App\Form\BolgelerFormType;
+use Cocur\Slugify\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,5 +41,25 @@ class BolgelerController extends AbstractController
         return $this->render('admin/bolgeler/create.html.twig', [
             'bolgeform'=>$form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/admin/content/slug/{id}", name="content_slug")
+     */
+    public function slug($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $bolgeler = $em->getRepository(Bolgeler::class)->find($id);
+
+        $slugify = new Slugify();
+
+        $slugControl = $bolgeler->getIsim();
+        $slug = $slugify->slugify($slugControl);
+
+        $bolgeler->setSlug($slug);
+        $em->flush();
+
+        return $this->redirectToRoute('bolgeler_home');
     }
 }

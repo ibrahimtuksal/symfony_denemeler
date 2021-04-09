@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'a955c4f989d0840a49a2620e6b9e17d0172e1ea4',
+    'reference' => '0a935f5121fd7c6bf475f78cf9c1ed0efec7d1b1',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'a955c4f989d0840a49a2620e6b9e17d0172e1ea4',
+      'reference' => '0a935f5121fd7c6bf475f78cf9c1ed0efec7d1b1',
     ),
     'cocur/slugify' => 
     array (
@@ -329,12 +329,12 @@
     ),
     'psr/cache' => 
     array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
+      'reference' => '213f9dbc5b9bfbc4f8db86d2838dc968752ce13b',
     ),
     'psr/cache-implementation' => 
     array (
@@ -384,12 +384,12 @@
     ),
     'psr/link' => 
     array (
-      'pretty_version' => '1.0.0',
-      'version' => '1.0.0.0',
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'eea8e8662d5cd3ae4517c9b864493f59fca95562',
+      'reference' => '846c25f58a1f02b93a00f2404e3626b6bf9b7807',
     ),
     'psr/link-implementation' => 
     array (
@@ -460,12 +460,13 @@
     ),
     'symfony/cache-contracts' => 
     array (
-      'pretty_version' => 'v2.2.0',
-      'version' => '2.2.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
+        0 => '2.4.x-dev',
       ),
-      'reference' => '8034ca0b61d4dd967f3698aaa1da2507b631d0cb',
+      'reference' => 'c0446463729b89dd4fa62e9aeecc80287323615d',
     ),
     'symfony/cache-implementation' => 
     array (

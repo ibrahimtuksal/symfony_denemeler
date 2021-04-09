@@ -34,6 +34,11 @@ class Bolgeler
      */
     private $contents;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
     public function __construct()
     {
         $this->mahalles = new ArrayCollection();
@@ -113,6 +118,18 @@ class Bolgeler
                 $content->setBolge(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

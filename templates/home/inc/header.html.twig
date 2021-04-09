@@ -25,8 +25,15 @@
                     <li class="nav-item">
                         <a class="nav-link menu" href="{{ path('sss_page') }}">S.S.S <i class="fas fa-question"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu" href="#">Bölgelerimiz <i class="fas fa-city"></i></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-city"></i> Bölgelerimiz
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for bolge in bolgelerHeader %}
+                                <li><a class="dropdown-item" href="{{ path('bolgeler_page', {slug:bolge.slug}) }}">{{ bolge.isim }}</a></li>
+                            {% endfor %}
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

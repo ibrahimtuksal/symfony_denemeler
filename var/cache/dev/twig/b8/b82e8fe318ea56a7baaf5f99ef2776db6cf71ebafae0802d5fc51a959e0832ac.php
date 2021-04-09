@@ -121,7 +121,14 @@ class __TwigTemplate_0fe22a22ba27d81e2607c47d67092977a379133e4af70c14be1bb4e8668
             // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bolge"], "isim", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
-                            <td><a href=\"\" class=\"btn btn-sm disabled btn-primary\">Düzenle <i class=\"fas fa-pencil-alt\"></i></a></td>
+                            <td><a href=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("content_slug", ["id" => twig_get_attribute($this->env, $this->source, $context["bolge"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\" class=\"btn btn-sm ";
+            if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["bolge"], "slug", [], "any", false, false, false, 29))) {
+                echo " disabled ";
+            }
+            echo "btn-primary\">Slug Yap <i class=\"fas fa-pencil-alt\"></i></a></td>
                             <td><a href=\"\" class=\"btn btn-sm disabled btn-danger\">Sil <i class=\"fas fa-trash\"></i></a></td>
                         </tr>
                     ";
@@ -156,7 +163,7 @@ class __TwigTemplate_0fe22a22ba27d81e2607c47d67092977a379133e4af70c14be1bb4e8668
 
     public function getDebugInfo()
     {
-        return array (  133 => 33,  122 => 28,  118 => 26,  114 => 25,  96 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 33,  126 => 29,  122 => 28,  118 => 26,  114 => 25,  96 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -189,7 +196,7 @@ class __TwigTemplate_0fe22a22ba27d81e2607c47d67092977a379133e4af70c14be1bb4e8668
                         <tr>
                             <th scope=\"row\">#</th>
                             <td>{{ bolge.isim }}</td>
-                            <td><a href=\"\" class=\"btn btn-sm disabled btn-primary\">Düzenle <i class=\"fas fa-pencil-alt\"></i></a></td>
+                            <td><a href=\"{{ path('content_slug', {id:bolge.id}) }}\" class=\"btn btn-sm {% if not bolge.slug is empty %} disabled {% endif %}btn-primary\">Slug Yap <i class=\"fas fa-pencil-alt\"></i></a></td>
                             <td><a href=\"\" class=\"btn btn-sm disabled btn-danger\">Sil <i class=\"fas fa-trash\"></i></a></td>
                         </tr>
                     {% endfor %}

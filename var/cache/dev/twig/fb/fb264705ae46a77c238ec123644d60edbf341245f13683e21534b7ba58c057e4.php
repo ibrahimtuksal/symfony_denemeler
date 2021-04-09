@@ -28,6 +28,8 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'description' => [$this, 'block_description'],
+            'keywords' => [$this, 'block_keywords'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
@@ -52,30 +54,69 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        ";
-        // line 8
-        echo "        <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
+        <meta name=\"description\" content=\"";
+        // line 6
+        $this->displayBlock('description', $context, $blocks);
+        echo "\">
+        <meta name=\"keywords\" content=\"";
+        // line 7
+        $this->displayBlock('keywords', $context, $blocks);
+        echo "\">
+        <meta name=\"robots\" content=\"index, follow\">
+        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf8\">
+        <meta name=\"language\" content=\"Turkish\">
+        <meta name=\"revisit-after\" content=\"3 days\">
+        <meta name=\"author\" content=\"İbrahim TUKSAL\">
+        <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.carousel.min.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.theme.default.min.css\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\"
               integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
         <script src=\"/assets/js/bootstrap.bundle.js\"></script>
+        <script src=\"/assets/js/jquery.min.js\"></script>
+        <script src=\"/assets/js/owl.carousel.min.js\"></script>
 
         ";
-        // line 14
+        // line 23
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 25
         echo "
         ";
-        // line 18
+        // line 26
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 21
+        // line 29
         echo "    </head>
     <body>
         ";
-        // line 23
+        // line 31
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 32
         echo "
+        <script>
+            \$('.owl-carousel').owlCarousel({
+                loop:false,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:1500,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1200:{
+                        items:3
+                    },
+                    1500:{
+                        items:3
+                    }
+                }
+            })
+        </script>
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
         <script src=\"/assets/js/bootstrap.js\"></script>
@@ -108,7 +149,7 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Su Tesisatçısı";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -117,20 +158,16 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
 
     }
 
-    // line 14
-    public function block_stylesheets($context, array $blocks = [])
+    // line 6
+    public function block_description($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "description"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "description"));
 
-        // line 15
-        echo "            ";
-        // line 16
-        echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -139,20 +176,16 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
 
     }
 
-    // line 18
-    public function block_javascripts($context, array $blocks = [])
+    // line 7
+    public function block_keywords($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "keywords"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "keywords"));
 
-        // line 19
-        echo "            ";
-        // line 20
-        echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -162,6 +195,47 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
     }
 
     // line 23
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 24
+        echo "        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 26
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 27
+        echo "
+        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 31
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -186,7 +260,7 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
 
     public function getDebugInfo()
     {
-        return array (  165 => 23,  155 => 20,  153 => 19,  143 => 18,  133 => 16,  131 => 15,  121 => 14,  102 => 5,  78 => 24,  76 => 23,  72 => 21,  70 => 18,  67 => 17,  65 => 14,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  239 => 31,  228 => 27,  218 => 26,  208 => 24,  198 => 23,  180 => 7,  162 => 6,  143 => 5,  95 => 32,  93 => 31,  89 => 29,  87 => 26,  84 => 25,  82 => 23,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -195,26 +269,58 @@ class __TwigTemplate_1d938cd54bd156bb070a0d8a3a9dfa07116abefc22d9033f6f004f5bcfe
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <title>{% block title %}Su Tesisatçısı{% endblock %}</title>
+        <meta name=\"description\" content=\"{% block description %}{% endblock %}\">
+        <meta name=\"keywords\" content=\"{% block keywords %}{% endblock %}\">
+        <meta name=\"robots\" content=\"index, follow\">
+        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf8\">
+        <meta name=\"language\" content=\"Turkish\">
+        <meta name=\"revisit-after\" content=\"3 days\">
+        <meta name=\"author\" content=\"İbrahim TUKSAL\">
         <link rel=\"stylesheet\" href=\"/assets/css/bootstrap.css\">
         <link rel=\"stylesheet\" href=\"/assets/css/style.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.carousel.min.css\">
+        <link rel=\"stylesheet\" href=\"/assets/css/owl.theme.default.min.css\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\"
               integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
         <script src=\"/assets/js/bootstrap.bundle.js\"></script>
+        <script src=\"/assets/js/jquery.min.js\"></script>
+        <script src=\"/assets/js/owl.carousel.min.js\"></script>
 
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+
         {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
 
+        <script>
+            \$('.owl-carousel').owlCarousel({
+                loop:false,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:1500,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    700:{
+                        items:2
+                    },
+                    1200:{
+                        items:3
+                    },
+                    1500:{
+                        items:3
+                    }
+                }
+            })
+        </script>
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>
 
         <script src=\"/assets/js/bootstrap.js\"></script>

@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\About;
+use App\Entity\Bolgeler;
 use App\Entity\Content;
 use App\Entity\Hizmetler;
+use App\Entity\Mahalle;
 use App\Entity\SSS;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,9 +24,12 @@ class PagesController extends AbstractController
         $hizmet = $em->getRepository(Hizmetler::class)->findOneBy(['slug' => $slug]);
         $hizmetNotIn = $em->getRepository(Hizmetler::class)->findOneBySomeField([$hizmet->getId()]);
 
+        $contentToHizmet = $em->getRepository(Content::class)->findBy(['hizmet' => $hizmet]);
+
         return $this->render('pages/hizmet.html.twig', [
             'hizmet' => $hizmet,
-            'hizmetNotIn' => $hizmetNotIn
+            'hizmetNotIn' => $hizmetNotIn,
+            'contentToHizmet' => $contentToHizmet
         ]);
     }
 
@@ -57,6 +62,23 @@ class PagesController extends AbstractController
         return $this->render('pages/content.html.twig', [
             'content' => $content,
             'contentNotIn' => $contentNotIn
+        ]);
+    }
+
+    /**
+     * @Route("/bolge/{slug}", name="bolgeler_page")
+     */
+    public function bolge($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $bolge = $em->getRepository(Bolgeler::class)->findOneBy(['slug' => $slug]);
+
+        $mahalle = $em->getRepository(Mahalle::class)->findBy(['semt' => $bolge]);
+
+        return $this->render('pages/bolge.html.twig',[
+            'bolgeler' => $bolge,
+            'mahalle' => $mahalle
         ]);
     }
 
