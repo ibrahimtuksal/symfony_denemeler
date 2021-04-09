@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {{ render(controller(
+        'App\\Controller\\HomeController:header'
+    )) }}
+    <div class="container-fluid my-5">
+        <div class="row my-5 justify-content-md-center">
+            <div class="col-md-1 text-start">
+                <img src="/images/sss.png" class="img-fluid" width="200" alt="">
+            </div>
+            <div class="col-md-5 border-bottom">
+                <p class="display-6 text-center">
+                    Sıkça Sorulan Sorular
+                </p>
+            </div>
+            <div class="col-md-1">
+                <img src="/images/sss.png" class="img-fluid" width="200" alt="">
+            </div>
+        </div>
+        <div class="row justify-content-md-center my-5">
+            <div class="col-md-6 tksl-shadow">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    {% for item in sss %}
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header " id="flush-heading{{ loop.index }}">
+                                <button class="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ loop.index }}" aria-expanded="false" aria-controls="flush-collapse{{ loop.index }}">
+                                    <h5 class="text-center">{{ item.title }}</h5>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ loop.index }}" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    {{ item.description | raw }}
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center my-5">
+            <div class="col-md-5 text-center">
+                <p class="h3">İletişim</p>
+                <hr>
+                <div class="d-grid gap-2 my-3">
+                    <a href="" class="btn btn-purple">Tıkla Ara <i class="fas fa-phone"></i></a>
+                </div>
+                <div class="d-grid gap-2 my-3">
+                    <a href="" class="btn btn-success">Whatsapp İletişim <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'home/inc/footer.html.twig' %}
+{% endblock %}

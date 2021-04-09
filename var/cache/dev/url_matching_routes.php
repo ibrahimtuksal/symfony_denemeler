@@ -31,6 +31,7 @@ return [
         '/admin/sss' => [[['_route' => 'sss_home', '_controller' => 'App\\Controller\\Admin\\SSSController::index'], null, null, null, false, false, null]],
         '/admin/sss/create' => [[['_route' => 'sss_create', '_controller' => 'App\\Controller\\Admin\\SSSController::create'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/sss' => [[['_route' => 'sss_page', '_controller' => 'App\\Controller\\PagesController::sss'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],

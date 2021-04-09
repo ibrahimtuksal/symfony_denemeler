@@ -45,6 +45,16 @@ class Hizmetler
      */
     private $contents;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $photo;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $text;
+
     public function __construct()
     {
         $this->contents = new ArrayCollection();
@@ -128,6 +138,30 @@ class Hizmetler
                 $content->setHizmet(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(string $text): self
+    {
+        $this->text = $text;
 
         return $this;
     }

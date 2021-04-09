@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\About;
 use App\Entity\Hizmetler;
+use App\Entity\SSS;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,6 +23,18 @@ class PagesController extends AbstractController
         return $this->render('pages/about.html.twig', [
             'about' => $about,
             'aboutNotIn' => $aboutNotIn
+        ]);
+    }
+    /**
+     * @Route("/sss", name="sss_page")
+     */
+    public function sss()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $sss = $em->getRepository(SSS::class)->findAll();
+        return $this->render('pages/sss.html.twig', [
+            'sss' => $sss
         ]);
     }
 }

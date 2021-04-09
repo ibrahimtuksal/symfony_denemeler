@@ -40,10 +40,10 @@ class __TwigTemplate_2e31a146e0ef0279ba5e83f66f815b1b58ddf6bf16e0331dc3eb35fefcb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/inc/header.html.twig"));
 
         // line 1
-        echo "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+        echo "<nav class=\"navbar navbar-expand-lg navbar-light bg-light tksl-shadow\">
     <div class=\"container-fluid\">
-        <div class=\"col-md-2 px-lg-3 mx-auto mb-3\">
-            <a class=\"navbar-brand brand-title\" href=\"#\"><img src=\"/images/logo.png\" class=\"img-fluid m-auto logo\" alt=\"\"> Su Tesisatçısı</a>
+        <div class=\"col-md-2 px-lg-3 mx-auto\">
+            <a class=\"navbar-brand brand-title text-uppercase\" href=\"#\">Su Tesisatçısı</a>
             <button class=\"navbar-toggler text-center\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -77,7 +77,10 @@ class __TwigTemplate_2e31a146e0ef0279ba5e83f66f815b1b58ddf6bf16e0331dc3eb35fefcb
         echo "                        </ul>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link menu\" href=\"#\">S.S.S <i class=\"fas fa-question\"></i></a>
+                        <a class=\"nav-link menu\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sss_page");
+        echo "\">S.S.S <i class=\"fas fa-question\"></i></a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link menu\" href=\"#\">Bölgelerimiz <i class=\"fas fa-city\"></i></a>
@@ -140,15 +143,15 @@ class __TwigTemplate_2e31a146e0ef0279ba5e83f66f815b1b58ddf6bf16e0331dc3eb35fefcb
 
     public function getDebugInfo()
     {
-        return array (  107 => 39,  96 => 37,  92 => 36,  77 => 23,  68 => 21,  64 => 20,  43 => 1,);
+        return array (  110 => 39,  99 => 37,  95 => 36,  82 => 26,  77 => 23,  68 => 21,  64 => 20,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+        return new Source("<nav class=\"navbar navbar-expand-lg navbar-light bg-light tksl-shadow\">
     <div class=\"container-fluid\">
-        <div class=\"col-md-2 px-lg-3 mx-auto mb-3\">
-            <a class=\"navbar-brand brand-title\" href=\"#\"><img src=\"/images/logo.png\" class=\"img-fluid m-auto logo\" alt=\"\"> Su Tesisatçısı</a>
+        <div class=\"col-md-2 px-lg-3 mx-auto\">
+            <a class=\"navbar-brand brand-title text-uppercase\" href=\"#\">Su Tesisatçısı</a>
             <button class=\"navbar-toggler text-center\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -170,7 +173,7 @@ class __TwigTemplate_2e31a146e0ef0279ba5e83f66f815b1b58ddf6bf16e0331dc3eb35fefcb
                         </ul>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link menu\" href=\"#\">S.S.S <i class=\"fas fa-question\"></i></a>
+                        <a class=\"nav-link menu\" href=\"{{ path('sss_page') }}\">S.S.S <i class=\"fas fa-question\"></i></a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link menu\" href=\"#\">Bölgelerimiz <i class=\"fas fa-city\"></i></a>

@@ -45,6 +45,7 @@ return [
     'sss_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SSSController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/sss/delete']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'about_page' => [['slug'], ['_controller' => 'App\\Controller\\PagesController::about'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/about']], [], []],
+    'sss_page' => [[], ['_controller' => 'App\\Controller\\PagesController::sss'], [], [['text', '/sss']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];
