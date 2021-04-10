@@ -7,7 +7,10 @@ TODO bolgeler için slug yazılımı
 TODO numara crud
 TODO genel ayarlar wp hattı
 TODO number crud gösterim sırası eklenecek
+hemen yap içerik silinince hizmet de siliniyor !!!!!
+yıldız sistemi 4 5 saatte bir iyi olarak arttır kötü geldiğinde 5 olursa 5'i sıfırla ve iyi ye kat
 slug kontrolü bütün controller kontrol !
 sitenin meta tagları hepsi kontrol !
 admin paneli genel bir kontrol !
 controller da em düzeltmesi kod düzeni !
+servis formu oluştursun. muhittinin maile atacak

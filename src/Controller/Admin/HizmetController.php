@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
-class HizmetController extends AbstractController
+class  HizmetController extends AbstractController
 {
     /**
      * @Route("admin/hizmet", name="hizmet_home")
